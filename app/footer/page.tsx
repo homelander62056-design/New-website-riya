@@ -138,7 +138,7 @@ export default function FooterPage() {
           </h3>
           <ul className="space-y-2.5 text-sm">
             <li><Link href="/privacyPolicy" className="hover:text-rose-500 transition-colors">Privacy Policy</Link></li>
-            <li><Link href="/terms&Condition" className="hover:text-rose-500 transition-colors">Terms & Conditions</Link></li>
+            <li><Link href="/terms-conditions" className="hover:text-rose-500 transition-colors">Terms & Conditions</Link></li>
             <li><Link href="/disclaimer" className="hover:text-rose-500 transition-colors">Disclaimer</Link></li>
           </ul>
         </div>
