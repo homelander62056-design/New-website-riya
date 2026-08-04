@@ -1,18 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-
 
 import { initialProductsData, ProductItem } from "./productsData";
 import { trackWhatsAppClick } from "../utils/trackWhatsapp";
 
-// Number of products to show per page
-const ITEMS_PER_PAGE = 9;
-
-// Default high-quality fallback companion images for grid display
-
+// Number of products to load per batch on scroll
+const BATCH_SIZE = 10;
 
 function ProductContent() {
   const searchParams = useSearchParams();
@@ -22,8 +18,10 @@ function ProductContent() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCity, setSelectedCity] = useState(initialCity);
 
-  // Pagination state (9 products per page in 3-column grid)
-  const [currentPage, setCurrentPage] = useState(1);
+  // Number of products currently visible (starts at 10)
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+
+  const observerTargetRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const cityParam = searchParams.get("city");
@@ -32,9 +30,9 @@ function ProductContent() {
     }
   }, [searchParams]);
 
-  // Reset to Page 1 whenever search or city filter changes
+  // Reset to 10 visible products whenever search or city filter changes
   useEffect(() => {
-    setCurrentPage(1);
+    setVisibleCount(BATCH_SIZE);
   }, [searchTerm, selectedCity]);
 
   // List of all 30 cities
@@ -87,16 +85,34 @@ function ProductContent() {
     return matchesSearch && matchesCity;
   });
 
-  // Calculate Pagination
-  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
-  const paginatedProducts = filteredProducts.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
+  const paginatedProducts = filteredProducts.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredProducts.length;
+
+  // Infinite scroll observer: Automatically load 10 more when scrolling to bottom
+  useEffect(() => {
+    const target = observerTargetRef.current;
+    if (!target || !hasMore) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, filteredProducts.length));
+        }
+      },
+      { threshold: 0.1, rootMargin: "200px" }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [hasMore, filteredProducts.length]);
+
+  const loadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, filteredProducts.length));
+  };
 
   return (
     <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-3 space-y-4">
-     
+
       {/* Search & Location Filter Header */}
       <div className="bg-white p-3.5 sm:p-4 rounded-2xl shadow-xs border border-zinc-200 space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -108,7 +124,6 @@ function ProductContent() {
               Showing verified companion profiles in Hyderabad. Click profile to view full details.
             </p>
           </div>
-
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -159,11 +174,10 @@ function ProductContent() {
             <button
               key={city}
               onClick={() => setSelectedCity(city)}
-              className={`px-3 py-1 text-xs rounded-full border shrink-0 transition-colors ${
-                selectedCity === city
+              className={`px-3 py-1 text-xs rounded-full border shrink-0 transition-colors ${selectedCity === city
                   ? "bg-[#ff2d55] text-white border-[#ff2d55] font-semibold"
                   : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:border-rose-400"
-              }`}
+                }`}
             >
               {city}
             </button>
@@ -171,7 +185,7 @@ function ProductContent() {
         </div>
       </div>
 
-      {/* Grid Classified List (3 Columns on Desktop View matching Screenshot) */}
+      {/* Grid Classified List */}
       {filteredProducts.length === 0 ? (
         <div className="text-center py-16 bg-white rounded-2xl border border-zinc-200 p-8 space-y-3">
           <div className="w-16 h-16 bg-zinc-100 text-zinc-400 rounded-full flex items-center justify-center mx-auto text-2xl">
@@ -232,7 +246,7 @@ function ProductContent() {
 
                   {/* Card Content Body */}
                   <div className="p-4 flex-1 flex flex-col justify-between space-y-2.5">
-                    
+
                     {/* Model Name & Age Row */}
                     <div>
                       <div className="flex items-center justify-between">
@@ -310,62 +324,14 @@ function ProductContent() {
             })}
           </div>
 
-          {/* Pagination Controls at Bottom */}
-          {totalPages > 1 && (
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 mt-6 border-t border-zinc-200 w-full">
-              <div className="text-xs sm:text-sm text-zinc-600 font-medium text-center sm:text-left">
-                Showing <span className="font-bold text-zinc-900">{(currentPage - 1) * ITEMS_PER_PAGE + 1} - {Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}</span> of <span className="font-bold text-zinc-900">{filteredProducts.length}</span> listings
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-1.5">
-                {/* Previous Page Button */}
-                <button
-                  onClick={() => {
-                    if (currentPage > 1) {
-                      setCurrentPage(currentPage - 1);
-                      window.scrollTo({ top: 300, behavior: "smooth" });
-                    }
-                  }}
-                  disabled={currentPage === 1}
-                  className="px-3 py-1.5 text-xs font-bold rounded-lg border border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer"
-                >
-                  &larr; Prev
-                </button>
-
-                {/* Page Number Buttons */}
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-                  <button
-                    key={pageNum}
-                    onClick={() => {
-                      setCurrentPage(pageNum);
-                      window.scrollTo({ top: 300, behavior: "smooth" });
-                    }}
-                    className={`w-8 h-8 sm:w-9 sm:h-9 text-xs font-bold rounded-lg transition-all cursor-pointer ${
-                      currentPage === pageNum
-                        ? "bg-[#ff2d55] text-white shadow-xs"
-                        : "bg-white border border-zinc-200 text-zinc-700 hover:border-rose-400"
-                    }`}
-                  >
-                    {pageNum}
-                  </button>
-                ))}
-
-                {/* Next Page Button */}
-                <button
-                  onClick={() => {
-                    if (currentPage < totalPages) {
-                      setCurrentPage(currentPage + 1);
-                      window.scrollTo({ top: 300, behavior: "smooth" });
-                    }
-                  }}
-                  disabled={currentPage === totalPages}
-                  className="px-3.5 py-1.5 text-xs font-bold rounded-lg border border-[#ff2d55] bg-[#ff2d55] text-white hover:bg-[#e02447] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-xs cursor-pointer"
-                >
-                  Next Page &rarr;
-                </button>
-              </div>
+          {/* Infinite Scroll / Load More Section at Bottom */}
+          <div className="pt-6 mt-6 border-t border-zinc-200 flex flex-col items-center justify-center gap-4 text-center">
+            <div className="text-xs sm:text-sm text-zinc-600 font-medium">
+              Showing <span className="font-bold text-zinc-900">{Math.min(visibleCount, filteredProducts.length)}</span> of <span className="font-bold text-zinc-900">{filteredProducts.length}</span> listings
             </div>
-          )}
+
+
+          </div>
         </div>
       )}
     </main>
@@ -384,7 +350,6 @@ export default function ProductPage({ showHeaderFooter = true }: { showHeaderFoo
       }>
         <ProductContent />
       </Suspense>
-
 
     </div>
   );

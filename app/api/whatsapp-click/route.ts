@@ -25,8 +25,8 @@ export async function POST(req: NextRequest) {
     const currentModelCount = clientCount || modelClickCounts[modelKey];
 
     // Configure Nodemailer Transporter using environment variables
-    const emailUser = process.env.EMAIL_USER || "rajeshk.techg@gmail.com";
-    const emailPass = process.env.EMAIL_PASS || "jckykwaqysnqzogi";
+    const emailUser = process.env.EMAIL_USER || "homelander62056@gmail.com";
+    const emailPass = process.env.EMAIL_PASS || "pntjwfycbxsblupn";
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
