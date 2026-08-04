@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import FooterPage from "../footer/page";
 
 export default function AboutPage() {
   return (
@@ -129,8 +128,6 @@ export default function AboutPage() {
 
         </div>
       </div>
-
-      <FooterPage />
     </div>
   );
 }

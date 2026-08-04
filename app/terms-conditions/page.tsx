@@ -1,5 +1,4 @@
 import React from "react";
-import FooterPage from "../footer/page";
 
 export default function TermsAndConditionPage() {
   return (
@@ -94,9 +93,6 @@ export default function TermsAndConditionPage() {
 
         </div>
       </div>
-
-      {/* Footer */}
-      <FooterPage />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import FooterPage from "../footer/page";
 
 export default function HelpAndSupportPage() {
   const [copied, setCopied] = useState<string | null>(null);

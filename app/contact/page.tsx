@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import FooterPage from "../footer/page";
 import { trackWhatsAppClick } from "../utils/trackWhatsapp";
 
 export default function ContactPage() {

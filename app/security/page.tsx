@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import FooterPage from "../footer/page";
 
 export default function SecurityPage() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -173,9 +172,6 @@ export default function SecurityPage() {
 
         </div>
       </div>
-
-      {/* Footer */}
-      <FooterPage />
     </div>
   );
 }

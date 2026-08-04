@@ -176,8 +176,6 @@ export default function FooterPage() {
         </div>
       </div>
 
-   
-
       {/* Bottom Bar: Copyright, DMCA & 18+ Disclaimer */}
       <div className="max-w-7xl mx-auto border-t border-zinc-200 mt-8 pt-8 space-y-3 text-xs font-semibold text-zinc-600">
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">

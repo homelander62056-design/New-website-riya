@@ -1,5 +1,4 @@
 import React from "react";
-import FooterPage from "../footer/page";
 
 export default function DisclaimerPage() {
   return (

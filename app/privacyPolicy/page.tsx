@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import FooterPage from "../footer/page";
 
 export default function PrivacyPolicyPage() {
   return (
