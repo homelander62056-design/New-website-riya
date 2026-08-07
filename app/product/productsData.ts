@@ -54,7 +54,7 @@ export const initialProductsData: ProductItem[] = [
     age: 24,
     rating: 4.8,
     status: "Available Now",
-    image: "/images/image2.avif",
+    image: "/images/image31.avif",
     aboutMe: "High profile Independent Female Model VIP High Class Service. Professional service provider with discrete companionship and entertainment guaranteed.",
   },
 
@@ -88,7 +88,7 @@ export const initialProductsData: ProductItem[] = [
     age: 24,
     rating: 4.7,
     status: "Available Now",
-    image: "/images/image4.avif",
+    image: "/images/image29.avif",
     aboutMe: "Sweet, friendly demeanor, instant booking for outcall and incall services with top hospitality in Madhapur area.",
   },
 
@@ -122,7 +122,7 @@ export const initialProductsData: ProductItem[] = [
     age: 25,
     rating: 4.6,
     status: "Available Now",
-    image: "/images/image6.avif",
+    image: "/images/image25.avif",
     aboutMe: "Gentle and attentive escort partner in Gachibowli. Fast response on call and WhatsApp for instant hotel visits.",
   },
 
@@ -547,7 +547,7 @@ export const initialProductsData: ProductItem[] = [
     age: 22,
     rating: 4.9,
     status: "Available Now",
-    image: "/images/image31.avif",
+    image: "/images/image2.avif",
     aboutMe: "Sweet desi college girl in Kothapet. High quality companion service for home and hotel outcalls.",
   },
 ];
