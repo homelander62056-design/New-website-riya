@@ -25,10 +25,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.
 
 export const metadata: Metadata = {
   title: {
-    default: "Riya Escort Service - Hyderabad Escort Companion",
-    template: "%s | Riya Escort Service",
+    default: "Riya Escort Services | Professional Escort Services in Hyderabad",
+    template: "%s | Riya Escort Services",
   },
-  description: "Browse verified local profiles across Hyderabad areas including Banjara Hills, Jubilee Hills, Madhapur, Hitech City, and Gachibowli.",
+  description: "Riya Escort Services provides professional and discreet escort services in Hyderabad. Explore our services and contact us for more information.",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Riya Escort Service in Hyderabad",
-    description: "Browse verified local profiles across Hyderabad areas.",
+    title: "Riya Escort Services | Professional Escort Services in Hyderabad",
+    description: "Riya Escort Services provides professional and discreet escort services in Hyderabad. Explore our services and contact us for more information.",
     url: siteUrl,
-    siteName: "Riya Escort Service",
+    siteName: "Riya Escort Services",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Riya Escort Service in Hyderabad",
-    description: "Browse verified local profiles across Hyderabad areas.",
+    title: "Riya Escort Services | Professional Escort Services in Hyderabad",
+    description: "Riya Escort Services provides professional and discreet escort services in Hyderabad. Explore our services and contact us for more information.",
   },
   robots: {
     index: true,
