@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { initialProductsData } from './product/productsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://example.com'; // Replace with actual production domain
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://riyaescortservices.com';
 
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -28,6 +28,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/terms-conditions`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/security`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.3,
     },
   ];
 

@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://riyaescortservices.com';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -7,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://example.com/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

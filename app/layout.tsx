@@ -21,6 +21,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+
 export const metadata: Metadata = {
   title: {
     default: "Riya Escort Service - Hyderabad Escort Companion",
@@ -32,14 +34,14 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Riya Escort Service in Hyderabad",
     description: "Browse verified local profiles across Hyderabad areas.",
-    url: "https://example.com",
+    url: siteUrl,
     siteName: "Riya Escort Service",
     locale: "en_IN",
     type: "website",
