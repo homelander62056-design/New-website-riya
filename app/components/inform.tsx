@@ -6,8 +6,8 @@ interface InformProps {
 }
 
 export default function Inform({
-  whatsappUrl = "https://wa.me/",
-  phoneUrl = "tel:",
+  whatsappUrl = "https://wa.me/919135751868",
+  phoneUrl = "tel:+919135751868",
 }: InformProps) {
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">

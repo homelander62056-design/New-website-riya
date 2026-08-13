@@ -30,14 +30,14 @@ export default function ContactPage() {
           
           {/* WhatsApp Card */}
           <a
-            href="https://wa.me/"
+            href="https://wa.me/919135751868"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() =>
               trackWhatsAppClick({
                 name: "Contact Page Inquiry",
                 city: "Hyderabad",
-                whatsappNumber: "General Inquiry",
+                whatsappNumber: "919135751868",
               })
             }
             className="bg-white border border-pink-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
           {/* Phone Call Card */}
           <a
-            href="tel:"
+            href="tel:+919135751868"
             className="bg-white border border-pink-200/80 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
           >
             <div className="w-16 h-16 rounded-2xl bg-rose-100/80 text-[#ff2d55] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
