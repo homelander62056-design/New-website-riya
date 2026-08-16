@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 import { initialProductsData, ProductItem } from "./productsData";
-import { trackWhatsAppClick } from "../utils/trackWhatsapp";
+import { trackWhatsAppClick, createWhatsAppLink } from "../utils/trackWhatsapp";
 
 // Number of products to load per batch on scroll
 const BATCH_SIZE = 10;
@@ -297,7 +297,7 @@ function ProductContent() {
                         {/* WhatsApp Button */}
                         {product.hasWhatsapp && (
                           <a
-                            href={`https://wa.me/${product.whatsappNumber}?text=Hi%20${encodeURIComponent(product.name)}`}
+                            href={createWhatsAppLink(product.name, product.city, product.whatsappNumber)}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() =>

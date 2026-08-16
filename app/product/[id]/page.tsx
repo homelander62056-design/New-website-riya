@@ -8,7 +8,7 @@ import { useParams } from "next/navigation";
 
 import { initialProductsData, ProductItem } from "../productsData";
 import { getModelSpecsAndDetails } from "./data";
-import { trackWhatsAppClick } from "../../utils/trackWhatsapp";
+import { trackWhatsAppClick, createWhatsAppLink } from "../../utils/trackWhatsapp";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -35,7 +35,7 @@ export default function ProductDetailPage() {
 
   const details = getModelSpecsAndDetails(product);
   const cleanPhone = product.phone.replace(/[^+\d]/g, "");
-  const whatsappUrl = `https://wa.me/${product.whatsappNumber}?text=Hi%20${encodeURIComponent(product.name)}`;
+  const whatsappUrl = createWhatsAppLink(product.name, product.city, product.whatsappNumber);
 
   // Get related models excluding current
   const relatedModels = initialProductsData
@@ -212,7 +212,7 @@ export default function ProductDetailPage() {
             {relatedModels.map((item) => {
               const itemDetails = getModelSpecsAndDetails(item);
               const itemPhone = item.phone.replace(/[^+\d]/g, "");
-              const itemWa = `https://wa.me/${item.whatsappNumber}?text=Hi%20${encodeURIComponent(item.name)}`;
+              const itemWa = createWhatsAppLink(item.name, item.city, item.whatsappNumber);
 
               return (
                 <div

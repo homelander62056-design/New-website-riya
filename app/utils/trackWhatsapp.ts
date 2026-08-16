@@ -26,3 +26,9 @@ export async function trackWhatsAppClick(data: {
     console.error("Error tracking WhatsApp click:", err);
   }
 }
+
+export function createWhatsAppLink(name: string, city: string, whatsappNumber: string) {
+  const message = `Hi ${name}, I am interested in booking your service in ${city}.`;
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
