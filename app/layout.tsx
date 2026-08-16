@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   description: "Riya Escort Services provides professional and discreet escort services in Hyderabad. Explore our services and contact us for more information.",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: ["/icon.png"],
+    apple: [{ url: "/icon.png", type: "image/png" }],
   },
   metadataBase: new URL(siteUrl),
   alternates: {
