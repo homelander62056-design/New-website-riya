@@ -28,7 +28,7 @@ export async function trackWhatsAppClick(data: {
 }
 
 export function createWhatsAppLink(name: string, city: string, whatsappNumber: string) {
-  const message = `Hi ${name}, I am interested in booking your service in ${city}.`;
+  const message = `Hi ${name}, I am interested in booking your service in ${city} via riyaescortservices.com`;
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 

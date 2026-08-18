@@ -30,7 +30,7 @@ export default function ContactClient() {
           
           {/* WhatsApp Card */}
           <a
-            href="https://wa.me/919135751868"
+            href="https://wa.me/919135751868?text=Hi%2C%20I%20am%20interested%20in%20booking%20your%20service%20via%20riyaescortservices.com"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() =>
