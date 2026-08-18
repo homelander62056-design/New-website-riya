@@ -30,14 +30,14 @@ export default function ContactClient() {
           
           {/* WhatsApp Card */}
           <a
-            href="https://wa.me/919135751868?text=Hi%2C%20I%20am%20interested%20in%20booking%20your%20service%20via%20riyaescortservices.com"
+            href="https://wa.me/919905752614?text=Hi%2C%20I%20am%20interested%20in%20booking%20your%20service%20via%20riyaescortservices.com"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() =>
               trackWhatsAppClick({
                 name: "Contact Page Inquiry",
                 city: "Hyderabad",
-                whatsappNumber: "919135751868",
+                whatsappNumber: "919905752614",
               })
             }
             className="bg-white border border-pink-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
@@ -53,7 +53,7 @@ export default function ContactClient() {
 
           {/* Phone Call Card */}
           <a
-            href="tel:+919135751868"
+            href="tel:+919905752614"
             className="bg-white border border-pink-200/80 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
           >
             <div className="w-16 h-16 rounded-2xl bg-rose-100/80 text-[#ff2d55] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
