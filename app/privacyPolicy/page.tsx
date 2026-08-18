@@ -1,5 +1,29 @@
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Data Protection & Confidentiality",
+  description: "Learn how Riya Escort Service safeguards your personal information, communication privacy, and browsing security.",
+  alternates: {
+    canonical: `${siteUrl}/privacyPolicy`,
+  },
+  openGraph: {
+    title: "Privacy Policy | Riya Escort Services",
+    description: "Learn how Riya Escort Service safeguards your personal information, communication privacy, and browsing security.",
+    url: `${siteUrl}/privacyPolicy`,
+    siteName: "cal girl hyderabad",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Riya Escort Services",
+    description: "Data protection and privacy guidelines at Riya Escort Service.",
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (

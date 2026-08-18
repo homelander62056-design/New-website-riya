@@ -1,5 +1,29 @@
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+
+export const metadata: Metadata = {
+  title: "About Us - Elite Companion Network in Hyderabad",
+  description: "Learn about Riya Escort Service, Hyderabad's most distinguished companion network offering 100% verified profiles and discreet executive service.",
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
+  openGraph: {
+    title: "About Us | Riya Escort Services",
+    description: "Learn about Riya Escort Service, Hyderabad's most distinguished companion network offering 100% verified profiles.",
+    url: `${siteUrl}/about`,
+    siteName: "cal girl hyderabad",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Riya Escort Services",
+    description: "Hyderabad's premier platform for elite companionship and discreet executive entertainment.",
+  },
+};
 
 export default function AboutPage() {
   return (

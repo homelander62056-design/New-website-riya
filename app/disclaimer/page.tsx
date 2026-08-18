@@ -1,4 +1,28 @@
 import React from "react";
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+
+export const metadata: Metadata = {
+  title: "Disclaimer & Legal Notice",
+  description: "Important legal disclaimer and 18+ adult age compliance notice for Riya Escort Services in Hyderabad.",
+  alternates: {
+    canonical: `${siteUrl}/disclaimer`,
+  },
+  openGraph: {
+    title: "Disclaimer | Riya Escort Services",
+    description: "Important legal disclaimer and 18+ adult age compliance notice for Riya Escort Services in Hyderabad.",
+    url: `${siteUrl}/disclaimer`,
+    siteName: "cal girl hyderabad",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Disclaimer | Riya Escort Services",
+    description: "Important legal disclaimer and 18+ compliance guidelines.",
+  },
+};
 
 export default function DisclaimerPage() {
   return (

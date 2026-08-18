@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
   openGraph: {
     title: "cal girl hyderabad | Professional Escort Services in Hyderabad",

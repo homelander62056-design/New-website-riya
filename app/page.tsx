@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import ProductPage from "./product/page";
+import ProductClient from "./product/ProductClient";
 import HomeBelow from "./components/homeBelow";
 import Inform from "./components/inform";
 
@@ -173,7 +173,7 @@ export default function Page() {
 
         {/* Models Listing Container */}
         <div className="py-4">
-          <ProductPage showHeaderFooter={false} />
+          <ProductClient />
         </div>
 
         {/* Category & Locations Section */}

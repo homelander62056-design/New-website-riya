@@ -1,4 +1,28 @@
 import React from "react";
+import { Metadata } from "next";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description: "Terms and conditions of service, client guidelines, and legal terms for Riya Escort Services in Hyderabad.",
+  alternates: {
+    canonical: `${siteUrl}/terms-conditions`,
+  },
+  openGraph: {
+    title: "Terms & Conditions | Riya Escort Services",
+    description: "Terms and conditions of service, client guidelines, and legal terms for Riya Escort Services in Hyderabad.",
+    url: `${siteUrl}/terms-conditions`,
+    siteName: "cal girl hyderabad",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Riya Escort Services",
+    description: "Terms and conditions of service for Riya Escort Services.",
+  },
+};
 
 export default function TermsAndConditionPage() {
   return (
