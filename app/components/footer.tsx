@@ -76,18 +76,18 @@ export default function FooterPage() {
             POPULAR LOCATIONS
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Banjara Hills Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Jubilee Hills Call Girls</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Gachibowli Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Hitech City Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Madhapur Escort Services</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Kondapur Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Begumpet Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Secunderabad Call Girls</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Kukatpally Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Ameerpet Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Somajiguda Call Girls</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Hitec City Escorts</a></li>
+            <li><Link href="/product?city=Banjara%20Hills" className="hover:text-rose-500 transition-colors">Banjara Hills Escorts</Link></li>
+            <li><Link href="/product?city=Jubilee%20Hills" className="hover:text-rose-500 transition-colors">Jubilee Hills Call Girls</Link></li>
+            <li><Link href="/product?city=Gachibowli" className="hover:text-rose-500 transition-colors">Gachibowli Escorts</Link></li>
+            <li><Link href="/product?city=Hitech%20City" className="hover:text-rose-500 transition-colors">Hitech City Escorts</Link></li>
+            <li><Link href="/product?city=Madhapur" className="hover:text-rose-500 transition-colors">Madhapur Escort Services</Link></li>
+            <li><Link href="/product?city=Kondapur" className="hover:text-rose-500 transition-colors">Kondapur Escorts</Link></li>
+            <li><Link href="/product?city=Begumpet" className="hover:text-rose-500 transition-colors">Begumpet Escorts</Link></li>
+            <li><Link href="/product?city=Secunderabad" className="hover:text-rose-500 transition-colors">Secunderabad Call Girls</Link></li>
+            <li><Link href="/product?city=Kukatpally" className="hover:text-rose-500 transition-colors">Kukatpally Escorts</Link></li>
+            <li><Link href="/product?city=Ameerpet" className="hover:text-rose-500 transition-colors">Ameerpet Escorts</Link></li>
+            <li><Link href="/product?city=Somajiguda" className="hover:text-rose-500 transition-colors">Somajiguda Call Girls</Link></li>
+            <li><Link href="/product?city=Miyapur" className="hover:text-rose-500 transition-colors">Miyapur Escorts</Link></li>
           </ul>
         </div>
 
@@ -97,18 +97,18 @@ export default function FooterPage() {
             MORE AREAS
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Panjagutta Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Himayatnagar Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Abids Call Girls</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Dilsukhnagar Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Mehdipatnam Call Girls</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">LB Nagar Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">SR Nagar Call Girls</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Balanagar Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Khairatabad Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Shamshabad Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Manikonda Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Tolichowki Escorts</a></li>
+            <li><Link href="/product?city=Punjagutta" className="hover:text-rose-500 transition-colors">Punjagutta Escorts</Link></li>
+            <li><Link href="/product?city=Tolichowki" className="hover:text-rose-500 transition-colors">Tolichowki Escorts</Link></li>
+            <li><Link href="/product?city=Mehdipatnam" className="hover:text-rose-500 transition-colors">Mehdipatnam Call Girls</Link></li>
+            <li><Link href="/product?city=Dilsukhnagar" className="hover:text-rose-500 transition-colors">Dilsukhnagar Escorts</Link></li>
+            <li><Link href="/product?city=LB%20Nagar" className="hover:text-rose-500 transition-colors">LB Nagar Escorts</Link></li>
+            <li><Link href="/product?city=Attapur" className="hover:text-rose-500 transition-colors">Attapur Escorts</Link></li>
+            <li><Link href="/product?city=Manikonda" className="hover:text-rose-500 transition-colors">Manikonda Escorts</Link></li>
+            <li><Link href="/product?city=Nallagandla" className="hover:text-rose-500 transition-colors">Nallagandla Escorts</Link></li>
+            <li><Link href="/product?city=Chandanagar" className="hover:text-rose-500 transition-colors">Chandanagar Escorts</Link></li>
+            <li><Link href="/product?city=Uppal" className="hover:text-rose-500 transition-colors">Uppal Escorts</Link></li>
+            <li><Link href="/product?city=Shamshabad" className="hover:text-rose-500 transition-colors">Shamshabad Escorts</Link></li>
+            <li><Link href="/product?city=Kompally" className="hover:text-rose-500 transition-colors">Kompally Escorts</Link></li>
           </ul>
         </div>
 
@@ -118,16 +118,16 @@ export default function FooterPage() {
             OUR SERVICES
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><a href="#" className="hover:text-rose-500 transition-colors">VIP Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">High Class Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Independent Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">College Girl Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Russian Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Model Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Girlfriend Experience</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Hotel Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Affordable Escorts</a></li>
-            <li><a href="#" className="hover:text-rose-500 transition-colors">Night Service</a></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">VIP Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">High Class Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Independent Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">College Girl Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Russian Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Model Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Girlfriend Experience</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Hotel Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Affordable Escorts</Link></li>
+            <li><Link href="/product" className="hover:text-rose-500 transition-colors">Night Service</Link></li>
           </ul>
         </div>
 

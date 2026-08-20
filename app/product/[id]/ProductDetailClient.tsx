@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { ProductItem, initialProductsData } from "../productsData";
 import { getModelSpecsAndDetails } from "./data";
@@ -14,6 +14,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const details = getModelSpecsAndDetails(product);
   const cleanPhone = product.phone.replace(/[^+\d]/g, "");
   const whatsappUrl = createWhatsAppLink(product.name, product.city, product.whatsappNumber);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Get related models excluding current
   const relatedModels = initialProductsData
@@ -26,7 +27,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
         {/* Breadcrumb Navigation */}
-        <div className="text-xs sm:text-sm text-zinc-500 flex items-center gap-2 font-medium">
+        <nav aria-label="Breadcrumb" className="text-xs sm:text-sm text-zinc-500 flex items-center gap-2 font-medium flex-wrap">
           <Link href="/" className="hover:text-[#ff2d55] transition-colors">
             Home
           </Link>
@@ -35,8 +36,12 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             Models
           </Link>
           <span>/</span>
+          <Link href={`/product?city=${encodeURIComponent(details.locationDetail.split(',')[0].trim())}`} className="hover:text-[#ff2d55] transition-colors">
+            {details.locationDetail}
+          </Link>
+          <span>/</span>
           <span className="text-[#ff2d55] font-bold">{product.name}</span>
-        </div>
+        </nav>
 
         {/* Top 2-Column Hero Card: Left Photo + Right Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -46,7 +51,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             <div className="bg-white border border-pink-100 rounded-3xl overflow-hidden shadow-sm aspect-[3/4] relative max-h-[540px] w-full">
               <img
                 src={details.displayImage}
-                alt={product.name}
+                alt={`${product.name} - ${product.city} Escort Model`}
                 className="w-full h-full object-cover object-top"
                 onError={(e) => {
                   e.currentTarget.src = `/images/image${((product.id - 1) % 16) + 1}.avif`;
@@ -79,7 +84,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 {product.name}
               </h1>
               <p className="text-zinc-500 font-semibold text-sm sm:text-base mt-1">
-                {product.age} years &bull; {product.city}
+                {product.age} years &bull; <Link href={`/product?city=${encodeURIComponent(details.locationDetail.split(',')[0].trim())}`} className="text-rose-500 hover:underline">{product.city}</Link>
               </p>
             </div>
 
@@ -111,6 +116,21 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               </div>
             </div>
 
+            {/* Profile Highlights List */}
+            <div className="bg-rose-50/60 border border-pink-100 rounded-2xl p-4 space-y-2">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-rose-600">
+                Verified Highlights &amp; Inclusions
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-zinc-700">
+                {details.highlights.map((highlight, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Rich Bio Text Paragraphs */}
             <div className="space-y-3.5 text-sm sm:text-base text-zinc-600 leading-relaxed pt-2 border-t border-zinc-100">
               {details.bioParagraphs.map((para, index) => (
@@ -121,7 +141,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             {/* Available For Section */}
             <div className="pt-4 border-t border-zinc-100 space-y-3">
               <h3 className="text-sm font-bold text-zinc-900 uppercase tracking-wider">
-                Available For
+                Services &amp; Occasions Available For
               </h3>
               <div className="flex flex-wrap gap-2">
                 {details.availableFor.map((item) => (
@@ -142,8 +162,11 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         {/* Contact Card Section */}
         <div className="bg-white border border-pink-200/80 rounded-3xl p-6 sm:p-8 shadow-xs text-center space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-zinc-900">
-            Contact {product.name}
+            Contact &amp; Book {product.name}
           </h2>
+          <p className="text-xs sm:text-sm text-zinc-500 max-w-md mx-auto">
+            Direct communication with zero middleman fees. Instant WhatsApp response for {product.city}.
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
             {/* WhatsApp Button */}
@@ -179,11 +202,54 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
           </div>
         </div>
 
-        {/* Related Models Section */}
+        {/* Frequently Asked Questions (FAQ) Section for this Model */}
+        {details.faqs && details.faqs.length > 0 && (
+          <div className="bg-white border border-zinc-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-4">
+            <div className="space-y-1">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-zinc-900">
+                Frequently Asked <span className="text-[#ff2d55]">Questions</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-500">
+                Everything you need to know before booking an appointment with {product.name}.
+              </p>
+            </div>
+
+            <div className="space-y-3 pt-2">
+              {details.faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className="border border-zinc-200 rounded-2xl overflow-hidden transition-colors"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                    className="w-full px-5 py-3.5 text-left font-bold text-sm sm:text-base text-zinc-800 flex items-center justify-between gap-3 bg-zinc-50/50 hover:bg-zinc-100/60 cursor-pointer"
+                  >
+                    <span>{faq.question}</span>
+                    <span className="text-rose-500 font-extrabold text-lg">
+                      {openFaq === idx ? "−" : "+"}
+                    </span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className="px-5 py-3.5 bg-white text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Related Models Section with Direct Links */}
         <div className="pt-6 space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900">
-            Related <span className="text-[#ff2d55]">Models</span>
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900">
+              Related <span className="text-[#ff2d55]">Models</span>
+            </h2>
+            <Link href="/product" className="text-xs sm:text-sm font-bold text-rose-500 hover:underline">
+              View All Models →
+            </Link>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedModels.map((item) => {
@@ -199,14 +265,14 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                   <Link href={`/product/${item.id}`} className="block relative aspect-[3/4] bg-zinc-100 overflow-hidden cursor-pointer">
                     <img
                       src={itemDetails.displayImage}
-                      alt={item.name}
+                      alt={`${item.name} in ${item.city}`}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         e.currentTarget.src = `/images/image${((item.id - 1) % 16) + 1}.avif`;
                       }}
                     />
                     <span className="absolute top-3 left-3 bg-[#ff2d55] text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
-                      Premium
+                      {itemDetails.badge}
                     </span>
                   </Link>
 

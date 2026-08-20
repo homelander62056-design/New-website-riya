@@ -7,8 +7,8 @@ import { useSearchParams } from "next/navigation";
 import { initialProductsData, ProductItem } from "./productsData";
 import { trackWhatsAppClick, createWhatsAppLink } from "../utils/trackWhatsapp";
 
-// Number of products to load per batch on scroll
-const BATCH_SIZE = 10;
+// Number of products to load per batch on scroll (renders all profiles so search crawlers discover all product links)
+const BATCH_SIZE = 40;
 
 function ProductContent() {
   const searchParams = useSearchParams();
