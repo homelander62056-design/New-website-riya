@@ -216,6 +216,50 @@ export default function FooterPage() {
           </svg>
         </a>
       </div>
+
+      {/* ─── Find Us Online — Free Backlinks Section ─── */}
+      <div className="max-w-7xl mx-auto mt-10 pt-8 border-t border-zinc-100">
+        <div className="text-center mb-5">
+          <p className="text-xs font-bold uppercase tracking-widest text-zinc-400">Find Us Online</p>
+          <p className="text-sm text-zinc-500 mt-1">Riya Call Girl &amp; Escort Service Hyderabad — Listed On</p>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <a href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer" title="Riya Escort Service on Tumblr"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#35465c] text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity shadow-sm">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.384 2.371h.066c.048 0 1.107-.048 1.668-.181v3.37c-.802.21-1.773.213-2.052.213z"/></svg>
+            Tumblr
+          </a>
+          <a href="https://medium.com" target="_blank" rel="noopener noreferrer" title="Riya Escort Service on Medium"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity shadow-sm">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            Medium
+          </a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" title="Riya Escort Service on Pinterest"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#E60023] text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity shadow-sm">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            Pinterest
+          </a>
+          <a href="https://reddit.com/r/hyderabad" target="_blank" rel="noopener noreferrer" title="Riya Escort Service on Reddit"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF4500] text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity shadow-sm">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+            Reddit
+          </a>
+          <a href="https://blogger.com" target="_blank" rel="noopener noreferrer" title="Riya Escort Service on Blogger"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8000] text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity shadow-sm">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.176 11.674c-.229-.459-.459-.842-.764-1.149.459-.842.689-1.837.689-2.908C18.101 4.1 15.194 1.5 11.595 1.5H6.5C4.019 1.5 2 3.519 2 6v12c0 2.481 2.019 4.5 4.5 4.5h11c2.481 0 4.5-2.019 4.5-4.5v-3.876c0-1.071-.306-2.068-.824-2.45zM8.5 7.5h3c.827 0 1.5.673 1.5 1.5s-.673 1.5-1.5 1.5h-3c-.827 0-1.5-.673-1.5-1.5S7.673 7.5 8.5 7.5zm7 9H8.5c-.827 0-1.5-.673-1.5-1.5s.673-1.5 1.5-1.5h7c.827 0 1.5.673 1.5 1.5s-.673 1.5-1.5 1.5z"/></svg>
+            Blogger
+          </a>
+          <a href="https://quora.com" target="_blank" rel="noopener noreferrer" title="Riya Escort Service on Quora"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#A82400] text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity shadow-sm">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M11.825 0C5.282 0 0 5.282 0 11.825c0 6.546 5.282 11.825 11.825 11.825 1.8 0 3.496-.413 5.007-1.147l1.607 2.206h3.955l-2.744-3.77c1.932-2.121 3.125-4.952 3.125-8.114C22.775 5.282 18.37 0 11.825 0zm3.12 18.593l-1.55-2.131c-.413.072-.842.108-1.278.108-3.32 0-6.011-2.691-6.011-6.011s2.691-6.011 6.011-6.011 6.011 2.691 6.011 6.011c0 2.12-.692 4.075-1.88 5.633l1.521 2.09-2.824.311z"/></svg>
+            Quora
+          </a>
+        </div>
+        <p className="text-center text-xs text-zinc-400 mt-4">
+          🔗 Riya Call Girl Hyderabad · Riya Escort Service · Call Girl Riya · Escort Service Hyderabad
+        </p>
+      </div>
     </footer>
+
   );
 }
