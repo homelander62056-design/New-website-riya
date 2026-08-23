@@ -8,8 +8,10 @@ export default function DialogBoxes() {
 
   useEffect(() => {
     setIsMounted(true);
+
     const isVerified = localStorage.getItem("age_verified");
-    if (!isVerified || isVerified !== "true") {
+
+    if (isVerified !== "true") {
       setShowModal(true);
     }
   }, []);
@@ -23,6 +25,10 @@ export default function DialogBoxes() {
     window.location.href = "https://www.google.com";
   };
 
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   if (!isMounted || !showModal) {
     return null;
   }
@@ -31,7 +37,29 @@ export default function DialogBoxes() {
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300">
       {/* Modal Container */}
       <div className="relative w-full max-w-md bg-[#0f0b15]/95 border border-pink-500/20 rounded-3xl p-6 sm:p-8 text-center shadow-2xl shadow-pink-500/10 animate-in fade-in zoom-in-95 duration-200">
-        
+
+        {/* Close X Button */}
+        <button
+          onClick={handleClose}
+          type="button"
+          aria-label="Close"
+          className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 hover:bg-zinc-800/80 hover:text-white hover:scale-105 transition-all duration-200 cursor-pointer"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 6l12 12M6 18L18 6"
+            />
+          </svg>
+        </button>
+
         {/* Warning Icon Container */}
         <div className="mx-auto mb-5 flex items-center justify-center w-14 h-14 rounded-2xl bg-pink-950/40 border border-pink-500/30 text-amber-300 shadow-inner">
           <svg
@@ -56,13 +84,16 @@ export default function DialogBoxes() {
           </span>
         </h2>
 
-        {/* Copyright-Safe & Clear Content */}
+        {/* Description */}
         <p className="text-sm text-zinc-300 leading-relaxed mb-8 px-2">
-          This portal contains adult-oriented companion listings. By entering, you confirm that you are at least 18 years of age and agree to abide by our site guidelines and privacy terms.
+          This portal contains adult-oriented companion listings. By entering,
+          you confirm that you are at least 18 years of age and agree to abide
+          by our site guidelines and privacy terms.
         </p>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          {/* Exit Button */}
           <button
             onClick={handleExit}
             type="button"
@@ -70,7 +101,8 @@ export default function DialogBoxes() {
           >
             Exit
           </button>
-          
+
+          {/* Enter Button */}
           <button
             onClick={handleAccept}
             type="button"
@@ -80,7 +112,7 @@ export default function DialogBoxes() {
           </button>
         </div>
 
-        {/* Subtle Footer Disclaimer */}
+        {/* Footer Disclaimer */}
         <p className="mt-5 text-[11px] text-zinc-500">
           Your choice will be saved locally for a seamless experience.
         </p>

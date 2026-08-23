@@ -8,7 +8,7 @@ export default function HomeBelow() {
       {/* Section 1: Riya Call Girl Hyderabad */}
       <div className="space-y-3">
         <h2 className="text-xl sm:text-2xl font-bold text-[#d62860]">
-          Riya Call Girl Hyderabad — Book Riya Escort Service 24/7
+          Call Girl Hyderabad — Book Riya Escort Service 24/7
         </h2>
         <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
           Welcome to <strong className="font-semibold text-zinc-800">Riya Escort Service</strong> — Hyderabad&apos;s most trusted{" "}

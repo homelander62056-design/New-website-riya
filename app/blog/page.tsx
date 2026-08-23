@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     url: `${siteUrl}/blog`,
     siteName: "cal girl hyderabad",
     locale: "en_IN",
+
     type: "website",
   },
   twitter: {
