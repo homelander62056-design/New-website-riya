@@ -97,7 +97,7 @@ export default function Page() {
                 <div className="relative w-full max-w-md h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border border-pink-500/20 shadow-2xl shadow-purple-950/80 bg-zinc-900 group">
                   <img
                     src="/images/firstpage.avif"
-                    alt="Featured Hyderabad Companion"
+                    alt="Premium luxury companion in Hyderabad for discreet dating"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
                       e.currentTarget.src = "/images/image1.avif";
@@ -138,12 +138,12 @@ export default function Page() {
               ].map((item) => (
                 <Link
                   key={item.name}
-                  href={`/product?city=${encodeURIComponent(item.name)}`}
+                  href={`/locations/${encodeURIComponent(item.name.replace(/ /g, '-'))}`}
                   className="inline-flex items-center gap-2.5 bg-white border border-zinc-200 hover:border-rose-300 rounded-full pl-1.5 pr-4 py-1 text-sm font-semibold text-zinc-800 shadow-2xs hover:shadow-xs transition-all hover:scale-105 cursor-pointer"
                 >
                   <img
                     src={item.img}
-                    alt={item.name}
+                    alt={`Premium escort service in ${item.name}, Hyderabad`}
                     className="w-8 h-8 rounded-full object-cover flex-shrink-0"
                     onError={(e) => {
                       e.currentTarget.src = "/images/image1.avif";
@@ -226,7 +226,7 @@ export default function Page() {
               ].map((cityName) => (
                 <Link
                   key={cityName}
-                  href={`/product?city=${encodeURIComponent(cityName)}`}
+                  href={`/locations/${encodeURIComponent(cityName.replace(/ /g, '-'))}`}
                   className="bg-white border border-zinc-200/80 hover:border-rose-400 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 shadow-2xs hover:shadow-md transition-all hover:-translate-y-0.5 cursor-pointer group text-center"
                 >
                   <svg className="w-5 h-5 text-rose-500 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">

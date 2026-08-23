@@ -69,11 +69,42 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Riya Escort Services",
+    "image": "https://riyaescortservices.com/icon.png",
+    "@id": "https://riyaescortservices.com",
+    "url": "https://riyaescortservices.com",
+    "telephone": "+91 9999999999", 
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Banjara Hills",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "TS",
+      "postalCode": "500034",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 17.4156,
+      "longitude": 78.4347
+    },
+    "description": "Experience the best escort service in Hyderabad with verified, premium, and luxury companions. Professional and discreet adult companionship."
+  };
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col justify-between bg-white text-zinc-800 font-sans">
         <DialogBoxes />
         <HeaderPage />

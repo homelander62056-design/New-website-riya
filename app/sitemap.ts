@@ -75,5 +75,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...productPages];
+  const citiesList = [
+    "Banjara Hills", "Jubilee Hills", "Madhapur", "Hitech City", "Gachibowli",
+    "Kondapur", "Kukatpally", "Miyapur", "Ameerpet", "Begumpet", "Secunderabad",
+    "Somajiguda", "Punjagutta", "Tolichowki", "Mehdipatnam", "Attapur",
+    "Manikonda", "Nallagandla", "Chandanagar", "LB Nagar", "Dilsukhnagar",
+    "Uppal", "Nagole", "Kompally", "Suchitra", "Shamshabad", "Nizampet",
+    "Alwal", "Hafeezpet", "Kothapet"
+  ];
+
+  const locationPages: MetadataRoute.Sitemap = citiesList.map((city) => ({
+    url: `${baseUrl}/locations/${encodeURIComponent(city.replace(/ /g, '-'))}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...productPages, ...locationPages];
 }

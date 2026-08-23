@@ -36,86 +36,78 @@ export default function HomeBelow() {
         </h2>
         <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
           Our <strong className="font-semibold text-zinc-800">escort service in Hyderabad</strong> covers every corner of the city. From the premium nightlife of{" "}
-          <Link href="/product?city=Banjara%20Hills" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Banjara-Hills" className="text-[#d62860] hover:underline font-medium">
             Banjara Hills
           </Link>{" "}
           and the IT hubs of{" "}
-          <Link href="/product?city=Hitech%20City" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Hitech-City" className="text-[#d62860] hover:underline font-medium">
             Hitech City
           </Link>{" "}
           and{" "}
-          <Link href="/product?city=Madhapur" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Madhapur" className="text-[#d62860] hover:underline font-medium">
             Madhapur
           </Link>{" "}
           to the upscale neighborhoods of{" "}
-          <Link href="/product?city=Jubilee%20Hills" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Jubilee-Hills" className="text-[#d62860] hover:underline font-medium">
             Jubilee Hills
           </Link>
           ,{" "}
-          <Link href="/product?city=Gachibowli" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Gachibowli" className="text-[#d62860] hover:underline font-medium">
             Gachibowli
           </Link>
           , and{" "}
-          <Link href="/product?city=Kondapur" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Kondapur" className="text-[#d62860] hover:underline font-medium">
             Kondapur
           </Link>{" "}
-          — premium <strong className="font-semibold text-zinc-800">call girls in Hyderabad</strong> are always within your reach.
+          — premium <strong className="font-semibold text-zinc-800">companion services in Hyderabad</strong> are always within your reach.
         </p>
 
         <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal pt-1">
           We also serve{" "}
-          <Link href="/product?city=Ameerpet" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Ameerpet" className="text-[#d62860] hover:underline font-medium">
             Ameerpet
           </Link>
           ,{" "}
-          <Link href="/product?city=Begumpet" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Begumpet" className="text-[#d62860] hover:underline font-medium">
             Begumpet
           </Link>
           ,{" "}
-          <Link href="/product?city=Kukatpally" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Kukatpally" className="text-[#d62860] hover:underline font-medium">
             Kukatpally
           </Link>
           ,{" "}
-          <Link href="/product?city=Mehdipatnam" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Mehdipatnam" className="text-[#d62860] hover:underline font-medium">
             Mehdipatnam
           </Link>
           ,{" "}
-          <Link href="/product?city=Attapur" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Attapur" className="text-[#d62860] hover:underline font-medium">
             Attapur
           </Link>
           ,{" "}
-          <Link href="/product?city=Miyapur" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Miyapur" className="text-[#d62860] hover:underline font-medium">
             Miyapur
           </Link>
           ,{" "}
-          <Link href="/product?city=LB%20Nagar" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/LB-Nagar" className="text-[#d62860] hover:underline font-medium">
             LB Nagar
           </Link>
           ,{" "}
-          <Link href="/product?city=Dilsukhnagar" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Dilsukhnagar" className="text-[#d62860] hover:underline font-medium">
             Dilsukhnagar
           </Link>
           ,{" "}
-          <Link href="/product?city=Uppal" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Uppal" className="text-[#d62860] hover:underline font-medium">
             Uppal
           </Link>
           ,{" "}
-          <Link href="/product?city=Tolichowki" className="text-[#d62860] hover:underline font-medium">
+          <Link href="/locations/Tolichowki" className="text-[#d62860] hover:underline font-medium">
             Tolichowki
           </Link>{" "}
-          and tourist destinations like{" "}
-          <Link href="/product?city=Ramoji%20Film%20City" className="text-[#d62860] hover:underline font-medium">
-            Ramoji Film City
-          </Link>{" "}
           and{" "}
-          <Link href="/product?city=Charminar" className="text-[#d62860] hover:underline font-medium">
-            Charminar
+          <Link href="/locations/Secunderabad" className="text-[#d62860] hover:underline font-medium">
+            Secunderabad
           </Link>
-          . If you&apos;re arriving by train or flight, our dedicated{" "}
-          <Link href="/product?city=Secunderabad" className="text-[#d62860] hover:underline font-medium">
-            Secunderabad Station &amp; Airport escort service
-          </Link>{" "}
-          ensures a companion is ready the moment you arrive at Hyderabad.
+          . If you&apos;re arriving by train or flight, our dedicated escort service ensures a companion is ready the moment you arrive in Hyderabad.
         </p>
       </div>
 

@@ -10,9 +10,9 @@ import { trackWhatsAppClick, createWhatsAppLink } from "../utils/trackWhatsapp";
 // Number of products to load per batch on scroll (renders all profiles so search crawlers discover all product links)
 const BATCH_SIZE = 40;
 
-function ProductContent() {
+function ProductContent({ defaultCity }: { defaultCity?: string }) {
   const searchParams = useSearchParams();
-  const initialCity = searchParams.get("city") || "All";
+  const initialCity = defaultCity || searchParams.get("city") || "All";
 
   const [products] = useState<ProductItem[]>(initialProductsData);
   const [searchTerm, setSearchTerm] = useState("");
@@ -332,7 +332,7 @@ function ProductContent() {
   );
 }
 
-export default function ProductClient() {
+export default function ProductClient({ defaultCity }: { defaultCity?: string }) {
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50 font-sans text-zinc-900">
       <Suspense fallback={
@@ -340,7 +340,7 @@ export default function ProductClient() {
           Loading listings...
         </div>
       }>
-        <ProductContent />
+        <ProductContent defaultCity={defaultCity} />
       </Suspense>
     </div>
   );
