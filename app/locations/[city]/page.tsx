@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${capitalizedCity} call girl`,
     ],
     alternates: {
-      canonical: `https://riyaescortservices.com/locations/${resolvedParams.city}`,
+      canonical: `https://www.riyaescortservices.com/locations/${resolvedParams.city}`,
     },
   };
 }

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { initialProductsData } from './product/productsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://riyaescortservices.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.riyaescortservices.com';
 
   const staticPages: MetadataRoute.Sitemap = [
     {

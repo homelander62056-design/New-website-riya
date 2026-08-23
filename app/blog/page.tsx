@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import BlogClient from "./BlogClient";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.riyaescortservices.com";
 
 export const metadata: Metadata = {
   title: "Blog & Updates",
