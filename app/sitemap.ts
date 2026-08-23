@@ -88,7 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/locations/${encodeURIComponent(city.replace(/ /g, '-'))}`,
     lastModified: new Date(),
     changeFrequency: 'daily',
-    priority: 0.8,
+    priority: 0.9,
   }));
 
   return [...staticPages, ...productPages, ...locationPages];

@@ -18,8 +18,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .join(" ");
 
   return {
-    title: `Premium Escorts in ${capitalizedCity} | Verified Companions`,
-    description: `Find top-rated, luxury companions and premium escort services in ${capitalizedCity}, Hyderabad. Verified profiles for a discreet and private experience.`,
+    title: `Riya Call Girl in ${capitalizedCity} | Escort Service ${capitalizedCity} Hyderabad`,
+    description: `Riya call girl ${capitalizedCity} Hyderabad — Book Riya escort service in ${capitalizedCity}. Call girl Riya available 24/7 for incall & outcall in ${capitalizedCity}. Verified, discreet & premium companionship.`,
+    keywords: [
+      `Riya call girl ${capitalizedCity}`,
+      `call girl Riya ${capitalizedCity}`,
+      `Riya escort service ${capitalizedCity}`,
+      `escort service ${capitalizedCity} Hyderabad`,
+      `call girl ${capitalizedCity} Hyderabad`,
+      `${capitalizedCity} escort service`,
+      `${capitalizedCity} call girl`,
+    ],
     alternates: {
       canonical: `https://riyaescortservices.com/locations/${resolvedParams.city}`,
     },
@@ -41,10 +50,13 @@ export default async function LocationPage({ params }: Props) {
         <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-900">
-              Premium Escorts in <span className="text-[#ff2d55]">{capitalizedCity}</span>
+              Riya Call Girl in <span className="text-[#ff2d55]">{capitalizedCity}</span>
             </h1>
             <p className="text-base text-zinc-600 max-w-2xl mx-auto">
-              Experience the finest companionship in {capitalizedCity}, Hyderabad. Browse our verified luxury companions, offering discreet and professional adult escort services tailored for you.
+              Book Riya escort service in {capitalizedCity}, Hyderabad. Riya call girl &amp; verified companions available 24/7 for incall and outcall — discreet, premium, and professional escort service in {capitalizedCity} tailored for you.
+            </p>
+            <p className="text-sm text-zinc-500 max-w-xl mx-auto">
+              Call girl Riya | Riya escort {capitalizedCity} | Escort service {capitalizedCity} Hyderabad
             </p>
           </div>
         </section>

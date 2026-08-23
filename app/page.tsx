@@ -37,16 +37,16 @@ export default function Page() {
                 {/* Main Title */}
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white">
                   <span className="bg-gradient-to-r from-amber-100 via-amber-200 to-yellow-300 bg-clip-text text-transparent block">
-                    Redefine
+                    Riya Escort
                   </span>
                   <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-fuchsia-400 bg-clip-text text-transparent block mt-1">
-                    Your Night
+                    Service Hyderabad
                   </span>
                 </h1>
 
                 {/* Description Paragraph */}
                 <p className="text-base sm:text-lg text-zinc-300 max-w-xl leading-relaxed">
-                  Curated companionship for those who refuse to settle. Sophisticated, discreet, and exclusively Hyderabad.
+                  Riya call girl Hyderabad — Book Riya escort service for a discreet, premium experience. Call girl Riya available 24/7 across Banjara Hills, Jubilee Hills, Gachibowli &amp; 60+ Hyderabad locations.
                 </p>
 
                 {/* Action Buttons */}
@@ -130,20 +130,23 @@ export default function Page() {
 
             <div className="flex flex-wrap items-center justify-center gap-3">
               {[
-                { name: "Banjara Hills", img: "/images/image1.avif" },
-                { name: "Jubilee Hills", img: "/images/image3.avif" },
-                { name: "Gachibowli", img: "/images/image6.avif" },
-                { name: "Russian Escorts", img: "/images/image5.avif" },
-                { name: "Independent Escorts", img: "/images/image4.avif" },
+                { name: "Riya Call Girl", img: "/images/image1.avif", href: "/product" },
+                { name: "Call Girl Riya", img: "/images/image3.avif", href: "/product" },
+                { name: "Riya Escort Service", img: "/images/image5.avif", href: "/product" },
+                { name: "Banjara Hills", img: "/images/image7.avif", href: "/locations/Banjara-Hills" },
+                { name: "Jubilee Hills", img: "/images/image8.avif", href: "/locations/Jubilee-Hills" },
+                { name: "Gachibowli", img: "/images/image9.avif", href: "/locations/Gachibowli" },
+                { name: "Russian Escorts", img: "/images/image5.avif", href: "/product" },
+                { name: "Independent Escorts", img: "/images/image2.jpeg", href: "/product" },
               ].map((item) => (
                 <Link
                   key={item.name}
-                  href={`/locations/${encodeURIComponent(item.name.replace(/ /g, '-'))}`}
+                  href={item.href}
                   className="inline-flex items-center gap-2.5 bg-white border border-zinc-200 hover:border-rose-300 rounded-full pl-1.5 pr-4 py-1 text-sm font-semibold text-zinc-800 shadow-2xs hover:shadow-xs transition-all hover:scale-105 cursor-pointer"
                 >
                   <img
                     src={item.img}
-                    alt={`Premium escort service in ${item.name}, Hyderabad`}
+                    alt={`${item.name} Hyderabad escort service`}
                     className="w-8 h-8 rounded-full object-cover flex-shrink-0"
                     onError={(e) => {
                       e.currentTarget.src = "/images/image1.avif";

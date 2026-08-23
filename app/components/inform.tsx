@@ -14,12 +14,12 @@ export default function Inform({
       <div className="bg-[#fff5f7] border border-pink-200/70 rounded-[2rem] p-8 sm:p-12 md:p-14 text-center shadow-xs">
         {/* Main Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-zinc-900 tracking-tight leading-tight">
-          Ready for an <span className="text-rose-500">Unforgettable</span> Experience?
+          Book <span className="text-rose-500">Riya Call Girl</span> — Escort Service Hyderabad
         </h2>
 
         {/* Subtitle Paragraph */}
         <p className="text-zinc-600 text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed mt-4 font-normal">
-          Get in touch with us today and let us connect you with the perfect companion for any occasion.
+          Contact Riya escort service today. Call girl Riya is available 24/7 for a discreet, premium companionship experience across Hyderabad.
         </p>
 
         {/* Action Buttons */}
