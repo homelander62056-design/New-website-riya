@@ -25,17 +25,17 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.riyaescortservi
 
 export const metadata: Metadata = {
   title: {
-    default: "Riya Call Girl Hyderabad | Riya Escort Service | Call Girl Riya",
-    template: "%s | Riya Escort Service Hyderabad",
+    default: "Call girl hyderabad |Escort Service | Call Girl ",
+    template: "%s |Escort Service Hyderabad",
   },
-  description: "Riya call girl Hyderabad — Premium escort service by Riya. Book Riya escort service for discreet, verified companionship in Hyderabad. Call girl Riya available 24/7 across Banjara Hills, Jubilee Hills, Gachibowli & 60+ locations.",
+  description: "call girl Hyderabad — Premium escort service by Riya. Book Riya escort service for discreet, verified companionship in Hyderabad. Call girl Riya available 24/7 across Banjara Hills, Jubilee Hills, Gachibowli & 60+ locations.",
   keywords: [
     // 🔥 TOP HIGH-VOLUME — Riya Brand (sirf sabse zyada search hone wale)
-    "Riya call girl",
+    " call girl",
     "call girl Riya",
-    "Riya escort service",
-    "Riya call girl Hyderabad",
-    "Riya escort Hyderabad",
+    "escort service hyderabad",
+    "call girl Hyderabad",
+    "escort Hyderabad",
 
     // 🔥 HIGHEST VOLUME — Call Girl Hyderabad (Google pe sabse zyada search)
     "call girl Hyderabad",

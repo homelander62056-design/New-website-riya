@@ -17,12 +17,12 @@ interface BlogPost {
 const todayPost: BlogPost = {
   id: 1,
   slug: "riya-call-girl-hyderabad-escort-service-guide",
-  title: "Riya Call Girl Hyderabad — Complete Guide to Riya Escort Service 2026",
+  title: "Riya Call Girl Hyderabad — The Ultimate Guide to Riya Escort Service (Updated)",
   excerpt:
-    "Looking for Riya call girl Hyderabad? Read our complete guide on how to book call girl Riya, what to expect from Riya escort service, and why Riya is Hyderabad's most trusted escort.",
-  date: "23 August 2026",
+    "Searching for Riya call girl Hyderabad? Explore our comprehensive 2026 guide on booking call girl Riya, what to expect from her premium escort service, and why she remains the city's top choice.",
+  date: "25 August 2026",
   readTime: "5 min read",
-  category: "Escort Guide",
+  category: "Premium Escort Guide",
   content: null,
 };
 
