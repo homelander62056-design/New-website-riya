@@ -171,8 +171,8 @@ function ProductContent({ defaultCity }: { defaultCity?: string }) {
               key={city}
               onClick={() => setSelectedCity(city)}
               className={`px-3 py-1 text-xs rounded-full border shrink-0 transition-colors ${selectedCity === city
-                  ? "bg-[#ff2d55] text-white border-[#ff2d55] font-semibold"
-                  : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:border-rose-400"
+                ? "bg-[#ff2d55] text-white border-[#ff2d55] font-semibold"
+                : "bg-zinc-50 border-zinc-200 text-zinc-700 hover:border-rose-400"
                 }`}
             >
               {city}
@@ -257,10 +257,10 @@ function ProductContent({ defaultCity }: { defaultCity?: string }) {
                       </div>
 
                       {/* Location Row */}
-                      <div className="flex items-center gap-1.5 text-xs sm:text-sm text-zinc-500 mt-1">
+                      {/* <div className="flex items-center gap-1.5 text-xs sm:text-sm text-zinc-500 mt-1">
                         <span className="text-[#ff2d55]">📍</span>
                         <span className="truncate">{product.city}</span>
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Short Description Bio */}

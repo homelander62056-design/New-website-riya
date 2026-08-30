@@ -34,9 +34,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalUrl = `${siteUrl}/product/${product.id}`;
   const details = getModelSpecsAndDetails(product);
 
+  const title = product.metaTitle || `${product.name} - Escort & Companion in ${product.city} | Riya Escort Services`;
+  const description = product.metaDescription || `${product.name} (${product.age} yrs), verified independent companion in ${details.locationDetail}. Direct contact: ${product.phone}. Available 24/7 for luxury hotel outcalls & dinner dates.`;
+  const keywords = product.metaKeywords || [
+    `${product.name} escort`,
+    `call girl ${details.locationDetail}`,
+    `escort service ${details.locationDetail}`,
+    `Hyderabad escort ${product.name}`,
+    `call girl ${product.city}`,
+  ];
+
   return {
-    title: `${product.name} - Escort & Companion in ${product.city} | Riya Escort Services`,
-    description: `${product.name} (${product.age} yrs), verified independent companion in ${details.locationDetail}. Direct contact: ${product.phone}. Available 24/7 for luxury hotel outcalls & dinner dates.`,
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -52,8 +63,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: `${product.name} - ${product.title}`,
-      description: `${product.name} (${product.age} yrs), verified companion in ${product.city}. Direct booking via WhatsApp or phone.`,
+      title,
+      description,
       url: canonicalUrl,
       siteName: "Riya Escort Services",
       locale: "en_IN",
@@ -67,8 +78,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | ${product.city} Escort Companion`,
-      description: `${product.name} (${product.age} yrs) in ${product.city}. 100% verified profile.`,
+      title,
+      description,
       images: [details.displayImage.startsWith("http") ? details.displayImage : `${siteUrl}${details.displayImage}`],
     },
   };
@@ -87,6 +98,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const details = getModelSpecsAndDetails(product);
   const canonicalUrl = `${siteUrl}/product/${product.id}`;
   const imageUrl = details.displayImage.startsWith("http") ? details.displayImage : `${siteUrl}${details.displayImage}`;
+  const pageDescription = product.metaDescription || product.description;
 
   // JSON-LD Structured Data for Google Rich Snippets
   const jsonLd = {
@@ -96,12 +108,12 @@ export default async function ProductDetailPage({ params }: Props) {
         "@type": "ProfilePage",
         "@id": canonicalUrl,
         "url": canonicalUrl,
-        "name": `${product.name} - ${product.city} Profile`,
-        "description": product.description,
+        "name": product.metaTitle || `${product.name} - ${product.city} Profile`,
+        "description": pageDescription,
         "mainEntity": {
           "@type": "Person",
           "name": product.name,
-          "description": product.description,
+          "description": pageDescription,
           "image": imageUrl,
           "address": {
             "@type": "PostalAddress",

@@ -8,6 +8,21 @@ type Props = {
   params: Promise<{ city: string }>;
 };
 
+const citiesList = [
+  "Banjara Hills", "Jubilee Hills", "Madhapur", "Hitech City", "Gachibowli",
+  "Kondapur", "Kukatpally", "Miyapur", "Ameerpet", "Begumpet", "Secunderabad",
+  "Somajiguda", "Punjagutta", "Tolichowki", "Mehdipatnam", "Attapur",
+  "Manikonda", "Nallagandla", "Chandanagar", "LB Nagar", "Dilsukhnagar",
+  "Uppal", "Nagole", "Kompally", "Suchitra", "Shamshabad", "Nizampet",
+  "Alwal", "Hafeezpet", "Kothapet"
+];
+
+export async function generateStaticParams() {
+  return citiesList.map((city) => ({
+    city: encodeURIComponent(city.replace(/ /g, "-")),
+  }));
+}
+
 // Generate metadata dynamically for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
