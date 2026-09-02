@@ -76,18 +76,18 @@ export default function FooterPage() {
             POPULAR LOCATIONS
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link href="/product?city=Banjara%20Hills" className="hover:text-rose-500 transition-colors">Banjara Hills Escorts</Link></li>
-            <li><Link href="/product?city=Jubilee%20Hills" className="hover:text-rose-500 transition-colors">Jubilee Hills Call Girls</Link></li>
-            <li><Link href="/product?city=Gachibowli" className="hover:text-rose-500 transition-colors">Gachibowli Escorts</Link></li>
-            <li><Link href="/product?city=Hitech%20City" className="hover:text-rose-500 transition-colors">Hitech City Escorts</Link></li>
-            <li><Link href="/product?city=Madhapur" className="hover:text-rose-500 transition-colors">Madhapur Escort Services</Link></li>
-            <li><Link href="/product?city=Kondapur" className="hover:text-rose-500 transition-colors">Kondapur Escorts</Link></li>
-            <li><Link href="/product?city=Begumpet" className="hover:text-rose-500 transition-colors">Begumpet Escorts</Link></li>
-            <li><Link href="/product?city=Secunderabad" className="hover:text-rose-500 transition-colors">Secunderabad Call Girls</Link></li>
-            <li><Link href="/product?city=Kukatpally" className="hover:text-rose-500 transition-colors">Kukatpally Escorts</Link></li>
-            <li><Link href="/product?city=Ameerpet" className="hover:text-rose-500 transition-colors">Ameerpet Escorts</Link></li>
-            <li><Link href="/product?city=Somajiguda" className="hover:text-rose-500 transition-colors">Somajiguda Call Girls</Link></li>
-            <li><Link href="/product?city=Miyapur" className="hover:text-rose-500 transition-colors">Miyapur Escorts</Link></li>
+            <li><Link href="/locations/Banjara-Hills" className="hover:text-rose-500 transition-colors">Banjara Hills Escorts</Link></li>
+            <li><Link href="/locations/Jubilee-Hills" className="hover:text-rose-500 transition-colors">Jubilee Hills Call Girls</Link></li>
+            <li><Link href="/locations/Gachibowli" className="hover:text-rose-500 transition-colors">Gachibowli Escorts</Link></li>
+            <li><Link href="/locations/Hitech-City" className="hover:text-rose-500 transition-colors">Hitech City Escorts</Link></li>
+            <li><Link href="/locations/Madhapur" className="hover:text-rose-500 transition-colors">Madhapur Escort Services</Link></li>
+            <li><Link href="/locations/Kondapur" className="hover:text-rose-500 transition-colors">Kondapur Escorts</Link></li>
+            <li><Link href="/locations/Begumpet" className="hover:text-rose-500 transition-colors">Begumpet Escorts</Link></li>
+            <li><Link href="/locations/Secunderabad" className="hover:text-rose-500 transition-colors">Secunderabad Call Girls</Link></li>
+            <li><Link href="/locations/Kukatpally" className="hover:text-rose-500 transition-colors">Kukatpally Escorts</Link></li>
+            <li><Link href="/locations/Ameerpet" className="hover:text-rose-500 transition-colors">Ameerpet Escorts</Link></li>
+            <li><Link href="/locations/Somajiguda" className="hover:text-rose-500 transition-colors">Somajiguda Call Girls</Link></li>
+            <li><Link href="/locations/Miyapur" className="hover:text-rose-500 transition-colors">Miyapur Escorts</Link></li>
           </ul>
         </div>
 
@@ -97,18 +97,18 @@ export default function FooterPage() {
             MORE AREAS
           </h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link href="/product?city=Punjagutta" className="hover:text-rose-500 transition-colors">Punjagutta Escorts</Link></li>
-            <li><Link href="/product?city=Tolichowki" className="hover:text-rose-500 transition-colors">Tolichowki Escorts</Link></li>
-            <li><Link href="/product?city=Mehdipatnam" className="hover:text-rose-500 transition-colors">Mehdipatnam Call Girls</Link></li>
-            <li><Link href="/product?city=Dilsukhnagar" className="hover:text-rose-500 transition-colors">Dilsukhnagar Escorts</Link></li>
-            <li><Link href="/product?city=LB%20Nagar" className="hover:text-rose-500 transition-colors">LB Nagar Escorts</Link></li>
-            <li><Link href="/product?city=Attapur" className="hover:text-rose-500 transition-colors">Attapur Escorts</Link></li>
-            <li><Link href="/product?city=Manikonda" className="hover:text-rose-500 transition-colors">Manikonda Escorts</Link></li>
-            <li><Link href="/product?city=Nallagandla" className="hover:text-rose-500 transition-colors">Nallagandla Escorts</Link></li>
-            <li><Link href="/product?city=Chandanagar" className="hover:text-rose-500 transition-colors">Chandanagar Escorts</Link></li>
-            <li><Link href="/product?city=Uppal" className="hover:text-rose-500 transition-colors">Uppal Escorts</Link></li>
-            <li><Link href="/product?city=Shamshabad" className="hover:text-rose-500 transition-colors">Shamshabad Escorts</Link></li>
-            <li><Link href="/product?city=Kompally" className="hover:text-rose-500 transition-colors">Kompally Escorts</Link></li>
+            <li><Link href="/locations/Punjagutta" className="hover:text-rose-500 transition-colors">Punjagutta Escorts</Link></li>
+            <li><Link href="/locations/Tolichowki" className="hover:text-rose-500 transition-colors">Tolichowki Escorts</Link></li>
+            <li><Link href="/locations/Mehdipatnam" className="hover:text-rose-500 transition-colors">Mehdipatnam Call Girls</Link></li>
+            <li><Link href="/locations/Dilsukhnagar" className="hover:text-rose-500 transition-colors">Dilsukhnagar Escorts</Link></li>
+            <li><Link href="/locations/LB-Nagar" className="hover:text-rose-500 transition-colors">LB Nagar Escorts</Link></li>
+            <li><Link href="/locations/Attapur" className="hover:text-rose-500 transition-colors">Attapur Escorts</Link></li>
+            <li><Link href="/locations/Manikonda" className="hover:text-rose-500 transition-colors">Manikonda Escorts</Link></li>
+            <li><Link href="/locations/Nallagandla" className="hover:text-rose-500 transition-colors">Nallagandla Escorts</Link></li>
+            <li><Link href="/locations/Chandanagar" className="hover:text-rose-500 transition-colors">Chandanagar Escorts</Link></li>
+            <li><Link href="/locations/Uppal" className="hover:text-rose-500 transition-colors">Uppal Escorts</Link></li>
+            <li><Link href="/locations/Shamshabad" className="hover:text-rose-500 transition-colors">Shamshabad Escorts</Link></li>
+            <li><Link href="/locations/Kompally" className="hover:text-rose-500 transition-colors">Kompally Escorts</Link></li>
           </ul>
         </div>
 
@@ -148,29 +148,29 @@ export default function FooterPage() {
       {/* Our Premium Partners / Hyderabad Locations Section */}
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-zinc-200 text-center space-y-4">
         <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#ff2d55]">
-          OUR PREMIUM PARTNERS
+          OUR PREMIUM PARTNERS &amp; LOCATIONS
         </h3>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 text-xs sm:text-sm text-zinc-600 font-medium max-w-5xl mx-auto">
           {[
-            "Hyderabad Escorts",
-            "Banjara Hills Escorts",
-            "Jubilee Hills Escorts",
-            "Gachibowli Escorts",
-            "Hitech City Escorts",
-            "Madhapur Escorts",
-            "Kondapur Escorts",
-            "Kukatpally Escorts",
-            "Begumpet Escorts",
-            "Ameerpet Escorts",
-            "Secunderabad Escorts",
-            "Miyapur Escorts",
-          ].map((location) => (
+            { name: "Hyderabad Escorts", slug: "" },
+            { name: "Banjara Hills Escorts", slug: "Banjara-Hills" },
+            { name: "Jubilee Hills Escorts", slug: "Jubilee-Hills" },
+            { name: "Gachibowli Escorts", slug: "Gachibowli" },
+            { name: "Hitech City Escorts", slug: "Hitech-City" },
+            { name: "Madhapur Escorts", slug: "Madhapur" },
+            { name: "Kondapur Escorts", slug: "Kondapur" },
+            { name: "Kukatpally Escorts", slug: "Kukatpally" },
+            { name: "Begumpet Escorts", slug: "Begumpet" },
+            { name: "Ameerpet Escorts", slug: "Ameerpet" },
+            { name: "Secunderabad Escorts", slug: "Secunderabad" },
+            { name: "Miyapur Escorts", slug: "Miyapur" },
+          ].map((item) => (
             <Link
-              key={location}
-              href={`/product?query=${encodeURIComponent(location)}`}
+              key={item.name}
+              href={item.slug ? `/locations/${item.slug}` : "/product"}
               className="hover:text-rose-500 transition-colors"
             >
-              {location}
+              {item.name}
             </Link>
           ))}
         </div>
