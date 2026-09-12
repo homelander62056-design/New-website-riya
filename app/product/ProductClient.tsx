@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-import { initialProductsData, ProductItem } from "./productsData";
+import { initialProductsData, ProductItem, getProductSlug } from "./productsData";
 import { trackWhatsAppClick, createWhatsAppLink } from "../utils/trackWhatsapp";
 
 // Number of products to load per batch on scroll (renders all profiles so search crawlers discover all product links)
@@ -212,13 +212,15 @@ function ProductContent({ defaultCity }: { defaultCity?: string }) {
               const modelImg = product.image || fallbackImg;
               const isVip = product.id % 2 === 0;
 
+              const productSlug = getProductSlug(product);
+
               return (
                 <div
                   key={product.id}
                   className="group bg-white rounded-3xl border border-pink-200/80 hover:border-rose-400 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
                 >
                   {/* Top Image Box Container */}
-                  <Link href={`/product/${product.id}`} className="block relative w-full aspect-[4/4.2] overflow-hidden bg-zinc-100 cursor-pointer">
+                  <Link href={`/product/${productSlug}`} className="block relative w-full aspect-[4/4.2] overflow-hidden bg-zinc-100 cursor-pointer">
                     <img
                       src={modelImg}
                       alt={product.name}
@@ -246,7 +248,7 @@ function ProductContent({ defaultCity }: { defaultCity?: string }) {
                     {/* Model Name & Age Row */}
                     <div>
                       <div className="flex items-center justify-between">
-                        <Link href={`/product/${product.id}`}>
+                        <Link href={`/product/${productSlug}`}>
                           <h3 className="text-lg font-bold text-zinc-900 group-hover:text-[#ff2d55] transition-colors">
                             {product.name}
                           </h3>
@@ -271,7 +273,7 @@ function ProductContent({ defaultCity }: { defaultCity?: string }) {
                     {/* Bottom Action Row (View Profile + Direct Contact Buttons) */}
                     <div className="pt-3 border-t border-zinc-100 flex items-center justify-between mt-auto">
                       <Link
-                        href={`/product/${product.id}`}
+                        href={`/product/${productSlug}`}
                         className="text-xs font-bold text-[#ff2d55] hover:underline flex items-center gap-1 group/btn"
                       >
                         <span>View Profile</span>

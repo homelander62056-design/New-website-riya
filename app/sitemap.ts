@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { initialProductsData } from './product/productsData';
+import { initialProductsData, getProductSlug } from './product/productsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://riyaescortservices.com';
@@ -67,9 +67,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Generate dynamic product detail page URLs
+  // Generate dynamic product detail page URLs with SEO slugs
   const productPages: MetadataRoute.Sitemap = initialProductsData.map((product) => ({
-    url: `${baseUrl}/product/${product.id}`,
+    url: `${baseUrl}/product/${getProductSlug(product)}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.8,

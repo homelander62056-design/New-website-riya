@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { initialProductsData } from "../productsData";
+import { notFound, redirect } from "next/navigation";
+import { initialProductsData, getProductSlug, findProductBySlugOrId } from "../productsData";
 import ProductDetailClient from "./ProductDetailClient";
 import { getModelSpecsAndDetails } from "./data";
 
@@ -10,15 +10,19 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return initialProductsData.map((product) => ({
+  // Generate both SEO slugs and legacy IDs for static prerendering
+  const slugParams = initialProductsData.map((product) => ({
+    id: getProductSlug(product),
+  }));
+  const idParams = initialProductsData.map((product) => ({
     id: product.id.toString(),
   }));
+  return [...slugParams, ...idParams];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const productId = Number(id);
-  const product = initialProductsData.find((item) => item.id === productId);
+  const product = findProductBySlugOrId(id);
 
   if (!product) {
     return {
@@ -31,7 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
-  const canonicalUrl = `${siteUrl}/product/${product.id}`;
+  const slug = getProductSlug(product);
+  const canonicalUrl = `${siteUrl}/product/${slug}`;
   const details = getModelSpecsAndDetails(product);
 
   const title = product.metaTitle || `${product.name} - Escort & Companion in ${product.city} | Riya Escort Services`;
@@ -87,16 +92,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { id } = await params;
-  const productId = Number(id);
-  const product = initialProductsData.find((item) => item.id === productId);
+  const product = findProductBySlugOrId(id);
 
   if (!product) {
     notFound();
   }
 
+  const slug = getProductSlug(product);
+
+  // If user or crawler requested legacy numeric ID (e.g. /product/8), 301 redirect to canonical SEO slug
+  if (id === product.id.toString() || id !== slug) {
+    redirect(`/product/${slug}`);
+  }
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
   const details = getModelSpecsAndDetails(product);
-  const canonicalUrl = `${siteUrl}/product/${product.id}`;
+  const canonicalUrl = `${siteUrl}/product/${slug}`;
   const imageUrl = details.displayImage.startsWith("http") ? details.displayImage : `${siteUrl}${details.displayImage}`;
   const pageDescription = product.metaDescription || product.description;
 

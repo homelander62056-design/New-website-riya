@@ -28,6 +28,29 @@ export interface ProductItem {
   metaKeywords?: string[];
 }
 
+export function getProductSlug(product: ProductItem): string {
+  const cleanCity = product.city.replace(/Hyderabad\s*[\/\-]\s*/i, "").trim();
+  const raw = `${product.name}-${cleanCity}`;
+  return raw
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function findProductBySlugOrId(param: string): ProductItem | undefined {
+  const decoded = decodeURIComponent(param).toLowerCase().trim();
+  // Match by generated slug
+  const bySlug = initialProductsData.find((p) => getProductSlug(p) === decoded);
+  if (bySlug) return bySlug;
+
+  // Match by numeric ID
+  const numericId = Number(decoded);
+  if (!isNaN(numericId) && numericId > 0) {
+    return initialProductsData.find((p) => p.id === numericId);
+  }
+  return undefined;
+}
+
 export const initialProductsData: ProductItem[] = [
   // 1. Banjara Hills
   {

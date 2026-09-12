@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ProductItem, initialProductsData } from "../productsData";
+import { ProductItem, initialProductsData, getProductSlug } from "../productsData";
 import { getModelSpecsAndDetails } from "./data";
 import { trackWhatsAppClick, createWhatsAppLink } from "../../utils/trackWhatsapp";
 
@@ -257,12 +257,14 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               const itemPhone = item.phone.replace(/[^+\d]/g, "");
               const itemWa = createWhatsAppLink(item.name, item.city, item.whatsappNumber);
 
+              const itemSlug = getProductSlug(item);
+
               return (
                 <div
                   key={item.id}
                   className="bg-white border border-zinc-200 rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col group"
                 >
-                  <Link href={`/product/${item.id}`} className="block relative aspect-[3/4] bg-zinc-100 overflow-hidden cursor-pointer">
+                  <Link href={`/product/${itemSlug}`} className="block relative aspect-[3/4] bg-zinc-100 overflow-hidden cursor-pointer">
                     <img
                       src={itemDetails.displayImage}
                       alt={`${item.name} in ${item.city}`}
@@ -278,7 +280,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
                   <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
                     <div>
-                      <Link href={`/product/${item.id}`}>
+                      <Link href={`/product/${itemSlug}`}>
                         <h3 className="text-lg font-extrabold text-zinc-900 group-hover:text-[#ff2d55] transition-colors cursor-pointer">
                           {item.name}
                         </h3>
