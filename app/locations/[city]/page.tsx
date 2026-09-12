@@ -33,7 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  const canonicalUrl = `https://www.riyaescortservices.com/locations/${resolvedParams.city}`;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+  const canonicalUrl = `${siteUrl}/locations/${resolvedParams.city}`;
 
   return {
     title: `Riya Call Girl in ${capitalizedCity} | Escort Service ${capitalizedCity} Hyderabad`,
@@ -84,7 +85,8 @@ export default async function LocationPage({ params }: Props) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  const pageUrl = `https://www.riyaescortservices.com/locations/${resolvedParams.city}`;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
+  const pageUrl = `${siteUrl}/locations/${resolvedParams.city}`;
 
   // Structured Schema for Search Engines (LocalBusiness + BreadcrumbList + FAQPage)
   const schemaData = {
@@ -97,13 +99,13 @@ export default async function LocationPage({ params }: Props) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.riyaescortservices.com"
+            "item": siteUrl
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Locations",
-            "item": "https://www.riyaescortservices.com/product"
+            "item": `${siteUrl}/product`
           },
           {
             "@type": "ListItem",

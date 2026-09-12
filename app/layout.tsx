@@ -21,7 +21,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.riyaescortservices.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
 
 export const metadata: Metadata = {
   title: {
@@ -171,9 +171,9 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     "name": "Riya Call Girl & Escort Service Hyderabad",
     "alternateName": ["Riya Escort Service", "Riya Call Girl Hyderabad", "Call Girl Riya", "Riya Escort Hyderabad"],
-    "image": "https://www.riyaescortservices.com/icon.png",
-    "@id": "https://www.riyaescortservices.com",
-    "url": "https://www.riyaescortservices.com",
+    "image": `${siteUrl}/icon.png`,
+    "@id": siteUrl,
+    "url": siteUrl,
     "telephone": "+91 9905752614",
     "priceRange": "$$",
     "address": {
