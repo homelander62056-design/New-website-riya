@@ -46,34 +46,39 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         {/* Top 2-Column Hero Card: Left Photo + Right Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-          {/* Left Column: Model Image */}
-          <div className="lg:col-span-5 w-full">
-            <div className="bg-white border border-pink-100 rounded-3xl overflow-hidden shadow-sm aspect-[3/4] relative max-h-[540px] w-full">
+          {/* Left Column: Model Image (Enlarged Height & Width) */}
+          <div className="lg:col-span-6 w-full">
+            <div className="bg-white border-2 border-pink-200/90 rounded-3xl overflow-hidden shadow-lg aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] relative min-h-[440px] sm:min-h-[540px] lg:min-h-[620px] max-h-[720px] w-full group">
               <img
                 src={details.displayImage}
                 alt={`${product.name} - ${product.city} Escort Model`}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => {
                   e.currentTarget.src = `/images/image${((product.id - 1) % 16) + 1}.avif`;
                 }}
               />
-              {/* Status Badge (Top Left) */}
-              <div className="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-xs text-white font-bold text-xs px-3 py-1 rounded-full shadow-md z-10 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                <span>{product.status || "Available Now"}</span>
+              {/* Overlay VIP Badge on Image */}
+              <div className="absolute top-3 right-3 bg-[#ff2d55] text-white font-bold text-xs px-3 py-1 rounded-full shadow-md z-10 uppercase tracking-wider">
+                {details.badge}
               </div>
             </div>
           </div>
 
           {/* Right Column: Specifications, Bio & Tags */}
-          <div className="lg:col-span-7 bg-white border border-pink-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
+          <div className="lg:col-span-6 bg-white border border-pink-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
 
-            {/* Top Row: Pill Badges */}
-            <div className="flex items-center justify-between gap-3">
-              <span className="bg-[#ff2d55] text-white font-bold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider">
-                {details.badge}
-              </span>
-              <span className="bg-emerald-50 text-emerald-600 border border-emerald-200 text-xs font-semibold rounded-full px-3.5 py-1">
+            {/* Top Row: Prominent "Available Now" Status & Badges Above Profile */}
+            <div className="flex flex-wrap items-center justify-between gap-2.5 pb-2 border-b border-zinc-100">
+              <div className="flex items-center gap-2">
+                <span className="bg-emerald-600 text-white font-bold text-xs sm:text-sm px-3.5 py-1.5 rounded-full shadow-sm flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
+                  <span>{product.status || "Available Now"}</span>
+                </span>
+                <span className="bg-[#ff2d55] text-white font-bold text-xs px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  Verified 100%
+                </span>
+              </div>
+              <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold rounded-full px-3 py-1.5">
                 {details.timing}
               </span>
             </div>
@@ -262,9 +267,12 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               return (
                 <div
                   key={item.id}
-                  className="bg-white border border-zinc-200 rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col group"
+                  className="bg-white border border-zinc-200 rounded-2xl md:rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-row md:flex-col group"
                 >
-                  <Link href={`/product/${itemSlug}`} className="block relative aspect-[3/4] bg-zinc-100 overflow-hidden cursor-pointer">
+                  <Link
+                    href={`/product/${itemSlug}`}
+                    className="block relative w-[120px] sm:w-[140px] md:w-full shrink-0 aspect-[3/4] bg-zinc-100 overflow-hidden cursor-pointer"
+                  >
                     <img
                       src={itemDetails.displayImage}
                       alt={`${item.name} in ${item.city}`}
@@ -273,24 +281,24 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                         e.currentTarget.src = `/images/image${((item.id - 1) % 16) + 1}.avif`;
                       }}
                     />
-                    <span className="absolute top-3 left-3 bg-[#ff2d55] text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
+                    <span className="absolute top-2 left-2 md:top-3 md:left-3 bg-[#ff2d55] text-white text-[10px] md:text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                       {itemDetails.badge}
                     </span>
                   </Link>
 
-                  <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                  <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between space-y-2 min-w-0">
                     <div>
                       <Link href={`/product/${itemSlug}`}>
-                        <h3 className="text-lg font-extrabold text-zinc-900 group-hover:text-[#ff2d55] transition-colors cursor-pointer">
+                        <h3 className="text-sm sm:text-base md:text-lg font-extrabold text-zinc-900 group-hover:text-[#ff2d55] transition-colors cursor-pointer truncate">
                           {item.name}
                         </h3>
                       </Link>
-                      <p className="text-xs text-zinc-500 font-semibold mt-0.5">
+                      <p className="text-xs text-zinc-500 font-semibold mt-0.5 truncate">
                         {item.age} years &bull; {item.city}
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2 pt-1">
+                    <div className="grid grid-cols-2 gap-1.5 sm:gap-2 pt-1">
                       <a
                         href={itemWa}
                         target="_blank"
@@ -302,13 +310,13 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                             whatsappNumber: item.whatsappNumber,
                           })
                         }
-                        className="bg-[#25D366] hover:bg-emerald-600 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1 transition-all"
+                        className="bg-[#25D366] hover:bg-emerald-600 text-white font-bold py-1.5 md:py-2 rounded-xl text-[11px] sm:text-xs flex items-center justify-center gap-1 transition-all"
                       >
                         WhatsApp
                       </a>
                       <a
                         href={`tel:${itemPhone}`}
-                        className="bg-[#ff2d55] hover:bg-rose-600 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1 transition-all"
+                        className="bg-[#ff2d55] hover:bg-rose-600 text-white font-bold py-1.5 md:py-2 rounded-xl text-[11px] sm:text-xs flex items-center justify-center gap-1 transition-all"
                       >
                         Call Now
                       </a>

@@ -5,6 +5,8 @@ import ProductClient from "../../product/ProductClient";
 import HomeBelow from "../../components/homeBelow";
 import Inform from "../../components/inform";
 
+import { localityGeoMap } from "../../product/productsData";
+
 type Props = {
   params: Promise<{ city: string }>;
 };
@@ -33,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  const geoData = localityGeoMap[capitalizedCity] || { lat: 17.3850, lng: 78.4867, pincode: "500001" };
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
   const canonicalUrl = `${siteUrl}/locations/${resolvedParams.city}`;
 
@@ -50,6 +53,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ],
     alternates: {
       canonical: canonicalUrl,
+    },
+    other: {
+      "geo.region": "IN-TG",
+      "geo.placename": `${capitalizedCity}, Hyderabad, Telangana, India`,
+      "geo.position": `${geoData.lat};${geoData.lng}`,
+      "ICBM": `${geoData.lat}, ${geoData.lng}`,
     },
     openGraph: {
       title: `Riya Call Girl in ${capitalizedCity} | Escort Service ${capitalizedCity} Hyderabad`,
@@ -85,6 +94,7 @@ export default async function LocationPage({ params }: Props) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  const geoData = localityGeoMap[capitalizedCity] || { lat: 17.3850, lng: 78.4867, pincode: "500001" };
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
   const pageUrl = `${siteUrl}/locations/${resolvedParams.city}`;
 
@@ -122,9 +132,22 @@ export default async function LocationPage({ params }: Props) {
         "url": pageUrl,
         "telephone": "+91 9905752614",
         "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": capitalizedCity,
+          "addressLocality": capitalizedCity,
+          "addressRegion": "Telangana",
+          "postalCode": geoData.pincode,
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": geoData.lat,
+          "longitude": geoData.lng
+        },
         "areaServed": {
           "@type": "AdministrativeArea",
-          "name": `${capitalizedCity}, Hyderabad`
+          "name": `${capitalizedCity}, Hyderabad, Telangana, India`
         }
       },
       {

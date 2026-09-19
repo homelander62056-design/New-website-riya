@@ -26,11 +26,85 @@ export interface ProductItem {
   metaTitle?: string;
   metaDescription?: string;
   metaKeywords?: string[];
+  // Geo SEO Fields
+  latitude?: number;
+  longitude?: number;
+  geoPosition?: string; // e.g. "17.4156;78.4350"
+  geoRegion?: string;   // e.g. "IN-TG"
+  geoPlacename?: string;// e.g. "Banjara Hills, Hyderabad, Telangana, India"
+  geoTitle?: string;
+  geoDescription?: string;
+}
+
+// Hyderabad Locality Geo Coordinates & Details for Local SEO & Rapid Google Indexing
+export const localityGeoMap: Record<string, { lat: number; lng: number; pincode: string }> = {
+  "Banjara Hills": { lat: 17.4156, lng: 78.4350, pincode: "500034" },
+  "Jubilee Hills": { lat: 17.4319, lng: 78.4073, pincode: "500033" },
+  "Madhapur": { lat: 17.4483, lng: 78.3915, pincode: "500081" },
+  "Hitech City": { lat: 17.4435, lng: 78.3772, pincode: "500081" },
+  "Gachibowli": { lat: 17.4401, lng: 78.3489, pincode: "500032" },
+  "Kondapur": { lat: 17.4699, lng: 78.3578, pincode: "500084" },
+  "Kukatpally": { lat: 17.4938, lng: 78.3999, pincode: "500072" },
+  "Miyapur": { lat: 17.4968, lng: 78.3614, pincode: "500049" },
+  "Ameerpet": { lat: 17.4375, lng: 78.4482, pincode: "500016" },
+  "Begumpet": { lat: 17.4447, lng: 78.4664, pincode: "500016" },
+  "Secunderabad": { lat: 17.4399, lng: 78.4983, pincode: "500003" },
+  "Somajiguda": { lat: 17.4260, lng: 78.4604, pincode: "500082" },
+  "Punjagutta": { lat: 17.4285, lng: 78.4526, pincode: "500082" },
+  "Tolichowki": { lat: 17.4018, lng: 78.4116, pincode: "500008" },
+  "Mehdipatnam": { lat: 17.3916, lng: 78.4420, pincode: "500028" },
+  "Attapur": { lat: 17.3685, lng: 78.4326, pincode: "500048" },
+  "Manikonda": { lat: 17.3984, lng: 78.3792, pincode: "500089" },
+  "Nallagandla": { lat: 17.4705, lng: 78.3129, pincode: "500019" },
+  "Chandanagar": { lat: 17.4894, lng: 78.3276, pincode: "500050" },
+  "LB Nagar": { lat: 17.3457, lng: 78.5522, pincode: "500074" },
+  "Dilsukhnagar": { lat: 17.3688, lng: 78.5247, pincode: "500060" },
+  "Uppal": { lat: 17.4022, lng: 78.5596, pincode: "500039" },
+  "Nagole": { lat: 17.3753, lng: 78.5684, pincode: "500068" },
+  "Kompally": { lat: 17.5348, lng: 78.4870, pincode: "500014" },
+  "Suchitra": { lat: 17.5029, lng: 78.4716, pincode: "500067" },
+  "Shamshabad": { lat: 17.2543, lng: 78.4311, pincode: "501218" },
+  "Nizampet": { lat: 17.5186, lng: 78.3845, pincode: "500090" },
+  "Alwal": { lat: 17.5026, lng: 78.5134, pincode: "500010" },
+  "Hafeezpet": { lat: 17.4842, lng: 78.3444, pincode: "500049" },
+  "Kothapet": { lat: 17.3616, lng: 78.5417, pincode: "500035" },
+};
+
+export function getProductGeo(product: ProductItem) {
+  const cleanCity = product.city
+    .replace(/^Hyderabad\s*[\/\-:]*\s*/i, "")
+    .replace(/[\/\-:]*\s*Hyderabad$/i, "")
+    .trim() || product.city.trim();
+
+  const geoData = localityGeoMap[cleanCity] || { lat: 17.3850, lng: 78.4867, pincode: "500001" };
+  const lat = product.latitude ?? geoData.lat;
+  const lng = product.longitude ?? geoData.lng;
+  const region = product.geoRegion || "IN-TG";
+  const placename = product.geoPlacename || `${cleanCity}, Hyderabad, Telangana, India`;
+  const position = product.geoPosition || `${lat};${lng}`;
+  const geoTitle = product.geoTitle || `${product.name} - Call Girl & Escort Service in ${cleanCity}, Hyderabad | Verified Profile`;
+  const geoDescription = product.geoDescription || `Looking for high class escort service in ${cleanCity}, Hyderabad? Book ${product.name} (${product.age} yrs), 100% verified independent companion in ${cleanCity}. Available 24/7 for luxury 5-star hotel visits, dinner dates & outcalls. Direct Call & WhatsApp: ${product.phone}.`;
+
+  return {
+    locality: cleanCity,
+    lat,
+    lng,
+    pincode: geoData.pincode,
+    region,
+    placename,
+    position,
+    geoTitle,
+    geoDescription,
+  };
 }
 
 export function getProductSlug(product: ProductItem): string {
-  const cleanCity = product.city.replace(/Hyderabad\s*[\/\-]\s*/i, "").trim();
-  const raw = `${product.name}-${cleanCity}`;
+  // Extract specific locality if city format is "Hyderabad / Area" or "Area"
+  const cleanCity = product.city
+    .replace(/^Hyderabad\s*[\/\-:]*\s*/i, "")
+    .replace(/[\/\-:]*\s*Hyderabad$/i, "")
+    .trim() || product.city.trim();
+  const raw = `${product.name} ${cleanCity}`;
   return raw
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -38,16 +112,32 @@ export function getProductSlug(product: ProductItem): string {
 }
 
 export function findProductBySlugOrId(param: string): ProductItem | undefined {
-  const decoded = decodeURIComponent(param).toLowerCase().trim();
-  // Match by generated slug
-  const bySlug = initialProductsData.find((p) => getProductSlug(p) === decoded);
-  if (bySlug) return bySlug;
+  if (!param) return undefined;
+  const decoded = decodeURIComponent(param).toLowerCase().trim().replace(/^-+|-+$/g, "");
 
-  // Match by numeric ID
+  // 1. Direct match with getProductSlug (e.g. "ananya-sharma-banjara-hills")
+  const exactSlugMatch = initialProductsData.find((p) => getProductSlug(p) === decoded);
+  if (exactSlugMatch) return exactSlugMatch;
+
+  // 2. Match by normalized slug (replacing special chars/spaces with dashes)
+  const normalizedParam = decoded.replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const normalizedSlugMatch = initialProductsData.find((p) => getProductSlug(p) === normalizedParam);
+  if (normalizedSlugMatch) return normalizedSlugMatch;
+
+  // 3. Match by numeric ID (e.g. "1", "2")
   const numericId = Number(decoded);
   if (!isNaN(numericId) && numericId > 0) {
-    return initialProductsData.find((p) => p.id === numericId);
+    const byId = initialProductsData.find((p) => p.id === numericId);
+    if (byId) return byId;
   }
+
+  // 4. Fallback: match by name slug (e.g. "ananya-sharma")
+  const byName = initialProductsData.find((p) => {
+    const nameSlug = p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    return nameSlug === normalizedParam || normalizedParam.startsWith(nameSlug);
+  });
+  if (byName) return byName;
+
   return undefined;
 }
 
@@ -911,7 +1001,7 @@ export const initialProductsData: ProductItem[] = [
     metaKeywords: [
       "Sunita Rao escort",
       "call girl Kothapet",
-      "college call girl Kothapet",
+      "college call girl ",
       "escort service Kothapet Hyderabad",
       "Kothapet call girl service",
       "desi escort Kothapet",

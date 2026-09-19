@@ -15,19 +15,19 @@ export default function Page() {
 
         {/* Top Hero Section matching user screenshot inside bg-gray-50 */}
         <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
-          
+
           {/* Dark Hero Banner Card */}
           <div className="relative bg-[#120720] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-purple-900/40 overflow-hidden">
-            
+
             {/* Background ambient glow effects */}
             <div className="absolute top-0 left-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
-              
+
               {/* Left Column Text & Actions */}
               <div className="lg:col-span-7 space-y-6 text-left">
-                
+
                 {/* Pill Badge */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider text-rose-400 bg-rose-950/50 border border-rose-500/30 uppercase">
                   <span className="w-4 h-0.5 bg-rose-500 rounded-full"></span>
@@ -51,7 +51,7 @@ export default function Page() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4 pt-2">
-                  
+
                   {/* View Collection -> Links to Models page (/product) */}
                   <Link
                     href="/product"
@@ -93,7 +93,7 @@ export default function Page() {
 
               {/* Right Column Image Card */}
               <div className="lg:col-span-5 relative flex justify-center">
-                
+
                 <div className="relative w-full max-w-md h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border border-pink-500/20 shadow-2xl shadow-purple-950/80 bg-zinc-900 group">
                   <img
                     src="/images/firstpage.avif"
@@ -103,7 +103,7 @@ export default function Page() {
                       e.currentTarget.src = "/images/image1.avif";
                     }}
                   />
-                  
+
                   {/* Image Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
 
@@ -113,7 +113,7 @@ export default function Page() {
                     <span className="text-xs font-bold text-amber-300 tracking-wider uppercase">Featured:</span>
                     <span className="text-sm font-extrabold text-pink-400">Riya Reddy</span>
                   </div>
-                  
+
                 </div>
 
               </div>
@@ -137,7 +137,7 @@ export default function Page() {
                 { name: "Jubilee Hills", img: "/images/image8.avif", href: "/locations/Jubilee-Hills" },
                 { name: "Gachibowli", img: "/images/image9.avif", href: "/locations/Gachibowli" },
                 { name: "Russian Escorts", img: "/images/image5.avif", href: "/product" },
-                { name: "Independent Escorts", img: "/images/image2.jpeg", href: "/product" },
+                { name: "Independent Escorts", img: "/images/image2.avif", href: "/product" },
               ].map((item) => (
                 <Link
                   key={item.name}
@@ -184,7 +184,7 @@ export default function Page() {
 
           {/* Card 1: Locations We Serve Header & Location Grid */}
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xs border border-zinc-200 text-center space-y-6">
-            
+
             {/* Header Block */}
             <div className="space-y-1.5 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-[#ff2d55]">
@@ -245,7 +245,7 @@ export default function Page() {
 
           {/* Category Quick Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
+
             {/* Card 2: Call Girls Hyderabad */}
             <Link href="/product" className="block">
               <div className="bg-white rounded-2xl p-5 shadow-xs border border-zinc-200 text-center hover:border-rose-500 transition-all cursor-pointer">

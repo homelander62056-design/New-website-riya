@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { initialProductsData, getProductSlug, findProductBySlugOrId } from "../productsData";
+import { initialProductsData, getProductSlug, findProductBySlugOrId, getProductGeo } from "../productsData";
 import ProductDetailClient from "./ProductDetailClient";
 import { getModelSpecsAndDetails } from "./data";
 
@@ -38,15 +38,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = getProductSlug(product);
   const canonicalUrl = `${siteUrl}/product/${slug}`;
   const details = getModelSpecsAndDetails(product);
+  const geo = getProductGeo(product);
 
-  const title = product.metaTitle || `${product.name} - Escort & Companion in ${product.city} | Riya Escort Services`;
-  const description = product.metaDescription || `${product.name} (${product.age} yrs), verified independent companion in ${details.locationDetail}. Direct contact: ${product.phone}. Available 24/7 for luxury hotel outcalls & dinner dates.`;
+  const title = product.geoTitle || product.metaTitle || `${product.name} - Call Girl in ${geo.locality}, Hyderabad | Escort Service`;
+  const description = product.geoDescription || product.metaDescription || `${product.name} (${product.age} yrs), verified independent companion in ${geo.locality}, Hyderabad. Direct contact: ${product.phone}. Available 24/7 for luxury hotel outcalls & dinner dates.`;
   const keywords = product.metaKeywords || [
     `${product.name} escort`,
-    `call girl ${details.locationDetail}`,
-    `escort service ${details.locationDetail}`,
+    `call girl ${geo.locality}`,
+    `call girl in ${geo.locality} Hyderabad`,
+    `escort service ${geo.locality}`,
+    `${geo.locality} call girl`,
+    `independent escort ${geo.locality}`,
+    `VIP escort ${geo.locality}`,
     `Hyderabad escort ${product.name}`,
-    `call girl ${product.city}`,
+    `Riya escort service ${geo.locality}`,
   ];
 
   return {
@@ -67,6 +72,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "max-snippet": -1,
       },
     },
+    other: {
+      "geo.region": geo.region,
+      "geo.placename": geo.placename,
+      "geo.position": geo.position,
+      "ICBM": `${geo.lat}, ${geo.lng}`,
+    },
     openGraph: {
       title,
       description,
@@ -77,7 +88,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: details.displayImage.startsWith("http") ? details.displayImage : `${siteUrl}${details.displayImage}`,
-          alt: `${product.name} in ${product.city}`,
+          alt: `${product.name} - Escort in ${geo.locality}, Hyderabad`,
         },
       ],
     },
@@ -107,11 +118,12 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riyaescortservices.com";
   const details = getModelSpecsAndDetails(product);
+  const geo = getProductGeo(product);
   const canonicalUrl = `${siteUrl}/product/${slug}`;
   const imageUrl = details.displayImage.startsWith("http") ? details.displayImage : `${siteUrl}${details.displayImage}`;
-  const pageDescription = product.metaDescription || product.description;
+  const pageDescription = product.geoDescription || product.metaDescription || product.description;
 
-  // JSON-LD Structured Data for Google Rich Snippets
+  // JSON-LD Structured Data for Google Rich Snippets & Local Geo Targeting
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -119,7 +131,7 @@ export default async function ProductDetailPage({ params }: Props) {
         "@type": "ProfilePage",
         "@id": canonicalUrl,
         "url": canonicalUrl,
-        "name": product.metaTitle || `${product.name} - ${product.city} Profile`,
+        "name": product.geoTitle || product.metaTitle || `${product.name} - ${geo.locality} Profile`,
         "description": pageDescription,
         "mainEntity": {
           "@type": "Person",
@@ -128,12 +140,40 @@ export default async function ProductDetailPage({ params }: Props) {
           "image": imageUrl,
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": details.locationDetail,
+            "addressLocality": geo.locality,
             "addressRegion": "Telangana",
+            "postalCode": geo.pincode,
             "addressCountry": "IN",
           },
           "telephone": product.phone,
           "gender": "Female",
+        },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${canonicalUrl}#localbusiness`,
+        "name": `Riya Escort Service - ${product.name} in ${geo.locality}`,
+        "description": pageDescription,
+        "url": canonicalUrl,
+        "telephone": product.phone,
+        "priceRange": "$$",
+        "image": imageUrl,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": geo.locality,
+          "addressLocality": geo.locality,
+          "addressRegion": "Telangana",
+          "postalCode": geo.pincode,
+          "addressCountry": "IN",
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": geo.lat,
+          "longitude": geo.lng,
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": `${geo.locality}, Hyderabad, Telangana, India`,
         },
       },
       {
