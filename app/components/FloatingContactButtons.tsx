@@ -20,20 +20,20 @@ export default function FloatingContactButtons() {
   return (
     <aside
       aria-label="Floating quick contact buttons"
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[9990] flex flex-col items-center gap-3.5"
+      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[9990] flex flex-col items-center gap-3"
     >
-      {/* 1. Original Phone Call Floating Button */}
+      {/* 1. Phone Call Floating Button */}
       <a
         href={`tel:${formattedPhone}`}
         aria-label="Call Now"
         title="Call Now: +91 9905752614"
-        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-700 hover:to-pink-600 text-white flex items-center justify-center shadow-lg shadow-rose-500/35 hover:shadow-rose-500/55 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
+        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#ff2d55] to-[#fb7185] hover:from-[#e11d48] hover:to-[#f43f5e] text-white flex items-center justify-center shadow-lg shadow-rose-500/35 hover:shadow-rose-500/55 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
       >
         <svg
-          className="w-6 h-6 sm:w-6.5 sm:h-6.5 fill-current transition-transform duration-300 group-hover:rotate-12"
+          className="w-6 h-6 sm:w-7 sm:h-7 fill-current transition-transform duration-300 group-hover:rotate-12"
           viewBox="0 0 24 24"
         >
-          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z" />
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
         </svg>
       </a>
 
@@ -51,20 +51,14 @@ export default function FloatingContactButtons() {
         }
         aria-label="Chat on WhatsApp"
         title="Chat on WhatsApp"
-        className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba57] text-white flex items-center justify-center shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
+        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba57] text-white flex items-center justify-center shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
       >
-        {/* Live Online Pulse Animation */}
-        <span className="absolute -top-1 -right-1 flex h-4 w-4">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-80"></span>
-          <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-400 border-2 border-white"></span>
-        </span>
-
-        {/* Official WhatsApp Logo SVG */}
+        {/* Original WhatsApp Icon SVG */}
         <svg
           className="w-7 h-7 sm:w-8 sm:h-8 fill-current transition-transform duration-300 group-hover:scale-110"
           viewBox="0 0 24 24"
         >
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.668-.699c.969.54 1.776.818 2.792.818 3.18 0 5.766-2.587 5.766-5.767.001-3.181-2.584-5.803-5.766-5.803zm3.385 8.204c-.14.393-.814.734-1.12.779-.293.043-.668.067-1.082-.066-.264-.085-.605-.204-1.042-.395-1.842-.803-3.037-2.673-3.129-2.796-.092-.123-.746-.992-.746-1.893 0-.901.472-1.343.64-1.527.169-.184.369-.23.492-.23.123 0 .246.002.354.007.113.006.264-.043.413.315.154.368.524 1.277.57 1.369.046.092.077.2.015.323-.061.123-.092.2-.184.307-.092.108-.194.24-.277.323-.092.092-.188.193-.081.377.108.184.478.788 1.025 1.275.706.629 1.301.824 1.486.916.184.092.292.077.4-.046.108-.123.461-.537.584-.721.123-.184.246-.154.415-.092.169.061 1.077.507 1.261.6.184.092.307.138.353.215.046.077.046.446-.094.839zM12.042 2C6.495 2 2 6.495 2 12.042c0 1.956.559 3.782 1.527 5.337L2 22l4.788-1.509a9.988 9.988 0 005.254 1.551c5.548 0 10.042-4.495 10.042-10.042C22.084 6.495 17.59 2 12.042 2zm0 18.258c-1.637 0-3.176-.481-4.473-1.31l-.321-.207-2.825.89.897-2.766-.226-.339A8.212 8.212 0 013.784 12.04c0-4.554 3.705-8.258 8.258-8.258 4.554 0 8.258 3.704 8.258 8.258 0 4.553-3.704 8.258-8.258 8.258z" />
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
       </a>
     </aside>
