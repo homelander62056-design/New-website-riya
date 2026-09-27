@@ -80,7 +80,7 @@ export default function HeaderPage() {
               {locationsList.map((loc) => (
                 <Link
                   key={loc}
-                  href={`/product?location=${encodeURIComponent(loc)}`}
+                  href={`/locations/${encodeURIComponent(loc.replace(/ /g, '-'))}`}
                   className="hover:text-rose-500 transition-colors block py-0.5"
                 >
                   {loc}
@@ -163,7 +163,7 @@ export default function HeaderPage() {
                 {locationsList.map((loc) => (
                   <Link
                     key={loc}
-                    href={`/product?location=${encodeURIComponent(loc)}`}
+                    href={`/locations/${encodeURIComponent(loc.replace(/ /g, '-'))}`}
                     onClick={() => setMenuOpen(false)}
                     className="hover:text-rose-500 py-1"
                   >
