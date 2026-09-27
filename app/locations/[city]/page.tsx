@@ -17,7 +17,8 @@ const citiesList = [
   "Somajiguda", "Punjagutta", "Tolichowki", "Mehdipatnam", "Attapur",
   "Manikonda", "Nallagandla", "Chandanagar", "LB Nagar", "Dilsukhnagar",
   "Uppal", "Nagole", "Kompally", "Suchitra", "Shamshabad", "Nizampet",
-  "Alwal", "Hafeezpet", "Kothapet"
+  "Alwal", "Hafeezpet", "Kothapet", "KPHB", "SR Nagar", "Himayatnagar",
+  "Abids", "Balanagar"
 ];
 
 export async function generateStaticParams() {

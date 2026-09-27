@@ -81,7 +81,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "Somajiguda", "Punjagutta", "Tolichowki", "Mehdipatnam", "Attapur",
     "Manikonda", "Nallagandla", "Chandanagar", "LB Nagar", "Dilsukhnagar",
     "Uppal", "Nagole", "Kompally", "Suchitra", "Shamshabad", "Nizampet",
-    "Alwal", "Hafeezpet", "Kothapet"
+    "Alwal", "Hafeezpet", "Kothapet", "KPHB", "SR Nagar", "Himayatnagar",
+    "Abids", "Balanagar"
   ];
 
   const locationPages: MetadataRoute.Sitemap = citiesList.map((city) => ({

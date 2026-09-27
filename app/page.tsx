@@ -223,9 +223,10 @@ export default function Page() {
                 "Tolichowki",
                 "Uppal",
                 "Secunderabad",
-                "Panjagutta",
+                "Punjagutta",
                 "Himayatnagar",
                 "Abids",
+                "Balanagar",
               ].map((cityName) => (
                 <Link
                   key={cityName}

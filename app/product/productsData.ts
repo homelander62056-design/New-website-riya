@@ -68,6 +68,11 @@ export const localityGeoMap: Record<string, { lat: number; lng: number; pincode:
   "Alwal": { lat: 17.5026, lng: 78.5134, pincode: "500010" },
   "Hafeezpet": { lat: 17.4842, lng: 78.3444, pincode: "500049" },
   "Kothapet": { lat: 17.3616, lng: 78.5417, pincode: "500035" },
+  "KPHB": { lat: 17.4938, lng: 78.4018, pincode: "500072" },
+  "SR Nagar": { lat: 17.4435, lng: 78.4443, pincode: "500038" },
+  "Himayatnagar": { lat: 17.3999, lng: 78.4867, pincode: "500029" },
+  "Abids": { lat: 17.3895, lng: 78.4740, pincode: "500001" },
+  "Balanagar": { lat: 17.4699, lng: 78.4416, pincode: "500037" },
 };
 
 export function getProductGeo(product: ProductItem) {
