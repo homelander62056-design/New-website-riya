@@ -192,8 +192,28 @@ export default function RootLayout({
     },
     "areaServed": [
       "Hyderabad", "Banjara Hills", "Jubilee Hills", "Gachibowli", "Hitech City",
-      "Madhapur", "Kondapur", "Secunderabad", "Ameerpet", "Kukatpally"
+      "Madhapur", "Kondapur", "Secunderabad", "Ameerpet", "Kukatpally",
+      "Begumpet", "Somajiguda", "Punjagutta", "Tolichowki", "Mehdipatnam",
+      "Attapur", "Manikonda", "Nallagandla", "Chandanagar", "LB Nagar",
+      "Dilsukhnagar", "Uppal", "Nagole", "Kompally", "Suchitra", "Shamshabad"
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "248",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash on Delivery, UPI",
     "description": "Riya call girl Hyderabad — Premium Riya escort service offering verified, discreet companions. Call girl Riya available 24/7 across 60+ locations in Hyderabad.",
     "keywords": "Riya call girl, call girl Riya, Riya escort service, Riya escort Hyderabad, escort service Hyderabad, call girl Hyderabad"
   };
