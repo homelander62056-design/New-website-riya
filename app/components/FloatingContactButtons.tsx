@@ -5,8 +5,8 @@ import { trackWhatsAppClick } from "../utils/trackWhatsapp";
 
 export default function FloatingContactButtons() {
   const [mounted, setMounted] = useState(false);
-  const phoneNumber = "919905752614";
-  const formattedPhone = "+919905752614";
+  const phoneNumber = "918652887767";
+  const formattedPhone = "+918652887767";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     "Hi Riya Escort Service, I am interested in booking a VIP model in Hyderabad via riyaescortservices.com"
   )}`;
@@ -26,7 +26,7 @@ export default function FloatingContactButtons() {
       <a
         href={`tel:${formattedPhone}`}
         aria-label="Call Now"
-        title="Call Now: +91 9905752614"
+        title="Call Now: +91 8652887767"
         className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-rose-600 to-pink-500 hover:from-rose-700 hover:to-pink-600 text-white flex items-center justify-center shadow-lg shadow-rose-500/35 hover:shadow-rose-500/55 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group"
       >
         <svg

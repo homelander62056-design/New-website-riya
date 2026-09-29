@@ -131,7 +131,7 @@ export default async function LocationPage({ params }: Props) {
         "name": `Riya Escort Service ${capitalizedCity}`,
         "description": `Premium Riya escort services and verified companions in ${capitalizedCity}, Hyderabad.`,
         "url": pageUrl,
-        "telephone": "+91 9905752614",
+        "telephone": "+91 8652887767",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
@@ -159,7 +159,7 @@ export default async function LocationPage({ params }: Props) {
             "name": `How to book a Riya call girl in ${capitalizedCity}?`,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": `You can book verified companions in ${capitalizedCity} directly via WhatsApp or phone call at +91 9905752614. Browse profiles, pick your favorite companion, and confirm your incall or outcall booking instantly.`
+              "text": `You can book verified companions in ${capitalizedCity} directly via WhatsApp or phone call at +91 8652887767. Browse profiles, pick your favorite companion, and confirm your incall or outcall booking instantly.`
             }
           },
           {

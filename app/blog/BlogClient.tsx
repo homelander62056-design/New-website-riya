@@ -199,7 +199,7 @@ export default function BlogClient() {
                 },
                 {
                   q: "How do I contact Riya call girl Hyderabad?",
-                  a: "You can contact us via WhatsApp or call at +91 9905752614. Our team is available 24/7.",
+                  a: "You can contact us via WhatsApp or call at +91 8652887767. Our team is available 24/7.",
                 },
                 {
                   q: "Is outcall service available?",
@@ -227,7 +227,7 @@ export default function BlogClient() {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                 <a
-                  href="https://wa.me/919905752614?text=Hi%2C%20I%20am%20interested%20in%20booking%20Riya%20escort%20service"
+                  href="https://wa.me/918652887767?text=Hi%2C%20I%20am%20interested%20in%20booking%20Riya%20escort%20service"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#25D366] hover:bg-emerald-600 text-white font-bold text-sm px-6 py-3 rounded-2xl transition-all hover:scale-105 inline-flex items-center gap-2"

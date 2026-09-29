@@ -175,7 +175,7 @@ export default function RootLayout({
     "image": `${siteUrl}/icon.png`,
     "@id": siteUrl,
     "url": siteUrl,
-    "telephone": "+91 9905752614",
+    "telephone": "+91 8652887767",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

@@ -34,7 +34,7 @@ export default function FooterPage() {
           {/* Icon Buttons */}
           <div className="flex items-center gap-3 pt-1">
             <a
-              href="https://wa.me/919905752614?text=Hi%2C%20I%20am%20interested%20in%20booking%20your%20service%20via%20riyaescortservices.com"
+              href="https://wa.me/918652887767?text=Hi%2C%20I%20am%20interested%20in%20booking%20your%20service%20via%20riyaescortservices.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -45,7 +45,7 @@ export default function FooterPage() {
               </svg>
             </a>
             <a
-              href="tel:+919905752614"
+              href="tel:+918652887767"
               aria-label="Call"
               className="w-9 h-9 rounded-full bg-rose-100 flex items-center justify-center text-rose-500 hover:bg-rose-200 transition-colors shadow-sm"
             >
